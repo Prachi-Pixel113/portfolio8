@@ -105,6 +105,7 @@ const Portfolio = () => {
       <ProfileCard 
         profile={mockData.profile}
         currentColor={getCurrentColor()}
+        onSettingsClick={() => setShowSettings(true)}
       />
       
       {/* Main Content Area */}
