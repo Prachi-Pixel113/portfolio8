@@ -99,9 +99,12 @@ const PortfolioSection = ({ projects, currentColor }) => {
                 onClick={() => handleFilter(category)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${
                   activeFilter === category
-                    ? 'bg-green-500 text-white shadow-lg'
+                    ? 'text-white shadow-lg'
                     : 'text-gray-300 hover:text-white hover:bg-gray-800'
                 }`}
+                style={{
+                  backgroundColor: activeFilter === category ? currentColor : 'transparent'
+                }}
               >
                 {category}
               </button>
