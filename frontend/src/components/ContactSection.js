@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 
-const ContactSection = ({ contact, theme }) => {
+const ContactSection = ({ contact, currentColor }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
