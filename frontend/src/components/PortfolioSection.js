@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Filter } from 'lucide-react';
 
-const PortfolioSection = ({ projects, theme }) => {
+const PortfolioSection = ({ projects, currentColor }) => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
