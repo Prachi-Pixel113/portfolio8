@@ -1,73 +1,66 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const HeroSection = ({ profile, currentColor }) => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  
-  const titles = ['Framer Designer', 'Developer', 'UI/UX Designer', 'Creative Coder'];
-  const currentTitle = titles[currentIndex];
-
-  useEffect(() => {
-    let timeout;
-    
-    if (!isDeleting) {
-      if (displayText.length < currentTitle.length) {
-        timeout = setTimeout(() => {
-          setDisplayText(currentTitle.slice(0, displayText.length + 1));
-        }, 100);
-      } else {
-        timeout = setTimeout(() => setIsDeleting(true), 2000);
-      }
-    } else {
-      if (displayText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayText(displayText.slice(0, -1));
-        }, 50);
-      } else {
-        setIsDeleting(false);
-        setCurrentIndex((prev) => (prev + 1) % titles.length);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, currentTitle, isDeleting]);
-
   return (
-    <div className="min-h-screen flex items-center justify-center px-8 lg:px-16 relative">
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto text-left">
-        {/* Main Heading */}
-        <div className="mb-8 animate-slideInLeft">
-          <h1 className="text-6xl lg:text-8xl font-bold leading-tight mb-6">
-            Say Hi from <span style={{ color: currentColor }}>{profile.name}</span>,
-          </h1>
-          
-          {/* Animated Typing Text */}
-          <div className="mb-6">
-            <h2 className="text-4xl lg:text-5xl text-gray-300 font-light">
-              <span style={{ color: currentColor }} className="font-semibold">
-                {displayText}
-              </span>
-              <span className="animate-pulse" style={{ color: currentColor }}>|</span>
-              <span className="text-white"> and Developer</span>
-            </h2>
+    <div className="min-h-screen flex items-center justify-center px-8 relative">
+      {/* Background Animation */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 rounded-full opacity-10 animate-pulse" 
+             style={{ backgroundColor: currentColor, top: '20%', left: '10%' }}></div>
+        <div className="absolute w-64 h-64 rounded-full opacity-10 animate-pulse delay-1000" 
+             style={{ backgroundColor: currentColor, top: '60%', right: '15%' }}></div>
+        <div className="absolute w-80 h-80 rounded-full opacity-10 animate-pulse delay-2000" 
+             style={{ backgroundColor: currentColor, bottom: '10%', left: '50%' }}></div>
+      </div>
+
+      <div className="relative z-10 text-left max-w-4xl">
+        {/* Introduce Text */}
+        <div className="flex items-center mb-8">
+          <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+            <span className="text-white text-sm">🏠</span>
           </div>
+          <span className="text-gray-400 text-sm uppercase tracking-wider">INTRODUCE</span>
         </div>
+
+        {/* Main Heading */}
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Say Hi from{' '}
+          <span className="inline-block" style={{ color: currentColor }}>
+            {profile.name}
+          </span>
+          ,<br />
+          {profile.title}
+        </h1>
 
         {/* Description */}
-        <div className="mb-12 animate-slideInRight">
-          <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">
-            I design and code beautifully simple things and I love what I do.<br/>
-            Just simple like that!
-          </p>
-        </div>
+        <p className="text-lg text-gray-400 mb-12 max-w-2xl leading-relaxed">
+          {profile.tagline}
+        </p>
 
-        {/* Circular Element */}
-        <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border-2 border-gray-600 flex items-center justify-center animate-spin-slow">
-          <div className="text-center">
-            <div className="text-xs text-gray-400 font-medium">MY</div>
-            <div className="text-xs text-gray-400 font-medium">PROJECTS</div>
+        {/* MY PROJECTS Circle */}
+        <div className="flex justify-end">
+          <div className="relative">
+            <div className="w-32 h-32 border border-gray-600 rounded-full flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-2xl mb-2">↓</div>
+              </div>
+            </div>
+            {/* Circular Text */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg className="w-40 h-40 absolute" viewBox="0 0 160 160">
+                <defs>
+                  <path
+                    id="circle"
+                    d="M 80, 80 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                  />
+                </defs>
+                <text className="text-xs fill-gray-500 uppercase tracking-wider">
+                  <textPath href="#circle" startOffset="0%">
+                    MY PROJECTS • MY PROJECTS • 
+                  </textPath>
+                </text>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
