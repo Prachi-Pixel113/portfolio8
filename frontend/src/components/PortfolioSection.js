@@ -33,7 +33,8 @@ const PortfolioSection = ({ projects, currentColor }) => {
                 href={project.liveUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 bg-green-500 hover:bg-green-600 rounded-full transition-colors duration-200"
+                className="p-2 rounded-full transition-colors duration-200"
+                style={{ backgroundColor: currentColor }}
               >
                 <ExternalLink size={16} className="text-white" />
               </a>
@@ -51,7 +52,7 @@ const PortfolioSection = ({ projects, currentColor }) => {
 
         {/* Category badge */}
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-green-500 text-white text-xs font-medium rounded-full">
+          <span className="px-3 py-1 text-white text-xs font-medium rounded-full" style={{ backgroundColor: currentColor }}>
             {project.category}
           </span>
         </div>
