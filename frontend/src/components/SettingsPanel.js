@@ -26,19 +26,19 @@ const SettingsPanel = ({ isOpen, onClose, settings, onSettingsChange }) => {
   ];
 
   const handleColorChange = (colorKey) => {
-    setSettings(prev => ({ ...prev, colorTheme: colorKey }));
+    onSettingsChange(prev => ({ ...prev, colorTheme: colorKey }));
   };
 
   const handleBackgroundChange = (backgroundKey) => {
-    setSettings(prev => ({ ...prev, backgroundStyle: backgroundKey }));
+    onSettingsChange(prev => ({ ...prev, backgroundStyle: backgroundKey }));
   };
 
   const handleLayoutChange = (layoutKey) => {
-    setSettings(prev => ({ ...prev, layoutStyle: layoutKey }));
+    onSettingsChange(prev => ({ ...prev, layoutStyle: layoutKey }));
   };
 
   const resetSettings = () => {
-    setSettings({
+    onSettingsChange({
       colorTheme: 'green',
       backgroundStyle: 'curves',
       layoutStyle: 'full',
