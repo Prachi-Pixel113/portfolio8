@@ -72,73 +72,22 @@ const Portfolio = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {settings.backgroundStyle === 'curves' && (
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800">
-            <defs>
-              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{ stopColor: getCurrentColor(), stopOpacity: 0.1 }} />
-                <stop offset="100%" style={{ stopColor: getCurrentColor(), stopOpacity: 0.05 }} />
-              </linearGradient>
-            </defs>
-            <path d="M0,200 Q200,100 400,200 Q600,300 800,200 Q1000,100 1200,200 L1200,0 L0,0 Z" fill="url(#gradient1)" />
-            <path d="M0,600 Q200,500 400,600 Q600,700 800,600 Q1000,500 1200,600 L1200,800 L0,800 Z" fill="url(#gradient1)" />
-          </svg>
-        )}
-        
-        {settings.backgroundStyle === 'particles' && (
-          <div className="absolute inset-0">
-            {[...Array(50)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-2 h-2 rounded-full animate-pulse"
-                style={{
-                  backgroundColor: getCurrentColor(),
-                  opacity: 0.3,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`
-                }}
-              />
-            ))}
-          </div>
-        )}
-        
-        {settings.backgroundStyle === 'geometric' && (
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-opacity-20 rotate-45 transform" style={{ borderColor: getCurrentColor() }}></div>
-            <div className="absolute top-3/4 right-1/4 w-24 h-24 border-2 border-opacity-20 rotate-12 transform" style={{ borderColor: getCurrentColor() }}></div>
-            <div className="absolute top-1/2 left-1/2 w-16 h-16 border-2 border-opacity-20 rotate-45 transform" style={{ borderColor: getCurrentColor() }}></div>
-          </div>
-        )}
-      </div>
-
-      {/* Settings Panel */}
-      <SettingsPanel 
-        isOpen={showSettings} 
-        onClose={() => setShowSettings(false)} 
-        settings={settings}
-        setSettings={setSettings}
-      />
-
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Left Sidebar */}
       <LeftSidebar 
-        activeSection={activeSection} 
-        onSectionClick={scrollToSection}
-        onSettingsClick={() => setShowSettings(true)}
         profile={mockData.profile}
         currentColor={getCurrentColor()}
       />
       
-      {/* Right Content Area */}
-      <div className={`transition-all duration-300 ${
-        settings.layoutStyle === 'boxed' 
-          ? 'ml-80 mr-8 max-w-6xl' 
-          : 'ml-80'
-      }`}>
+      {/* Right Sidebar */}
+      <RightSidebar 
+        activeSection={activeSection}
+        onSectionClick={handleSectionClick}
+        currentColor={getCurrentColor()}
+      />
+      
+      {/* Main Content Area */}
+      <div className="ml-80 mr-16">
         <section id="home" className="section">
           <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
         </section>
