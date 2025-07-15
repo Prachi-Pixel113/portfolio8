@@ -2,18 +2,18 @@ import { Calendar, MapPin, Phone, Mail, Users, Award, Code, Target } from 'lucid
 
 export const mockData = {
   profile: {
-    name: "Prachi Agarwal",
-    title: "Full Stack Developer",
-    tagline: "Passionate about creating innovative solutions and beautiful user experiences through code",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b96e7b5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    email: "prachi.agarwal@example.com",
-    phone: "+91 9876543210",
-    location: "Mumbai, India",
+    name: "Drake",
+    title: "Framer Designer & Developer",
+    tagline: "I design and code beautifully simple things and I love what I do. Just simple like that!",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    email: "hello@drake.design",
+    phone: "+1 (555) 123-4567",
+    location: "Base in Los Angeles, CA",
     social: {
-      github: "https://github.com/prachi-agarwal",
-      linkedin: "https://linkedin.com/in/prachi-agarwal",
-      twitter: "https://twitter.com/prachi_agarwal",
-      instagram: "https://instagram.com/prachi_agarwal"
+      github: "https://github.com/drake-design",
+      linkedin: "https://linkedin.com/in/drake-design",
+      twitter: "https://twitter.com/drake_design",
+      instagram: "https://instagram.com/drake_design"
     }
   },
 
