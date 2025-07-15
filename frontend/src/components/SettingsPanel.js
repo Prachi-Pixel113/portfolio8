@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, Palette, Monitor, Layout, Sparkles } from 'lucide-react';
 
-const SettingsPanel = ({ isOpen, onClose, settings, setSettings }) => {
+const SettingsPanel = ({ isOpen, onClose, settings, onSettingsChange }) => {
   const colorOptions = [
     { name: 'Green', key: 'green', color: '#10b981' },
     { name: 'Blue', key: 'blue', color: '#3b82f6' },
