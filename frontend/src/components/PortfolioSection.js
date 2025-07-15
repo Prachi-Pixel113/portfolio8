@@ -16,7 +16,7 @@ const PortfolioSection = ({ projects, currentColor }) => {
     }
   };
 
-  const ProjectCard = ({ project }) => (
+  const ProjectCard = ({ project, currentColor }) => (
     <div className="group relative bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-800">
       <div className="relative overflow-hidden">
         <img 
