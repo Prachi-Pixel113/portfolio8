@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProfileCard from './ProfileCard';
+import RightNavbar from './RightNavbar';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ResumeSection from './ResumeSection';
