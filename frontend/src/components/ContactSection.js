@@ -106,7 +106,7 @@ const ContactSection = ({ contact, currentColor }) => {
           {/* Contact Form */}
           <div className="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <MessageCircle size={28} className="mr-3 text-green-400" />
+              <MessageCircle size={28} className="mr-3" style={{ color: currentColor }} />
               Send Message
             </h3>
 
@@ -122,7 +122,13 @@ const ContactSection = ({ contact, currentColor }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white"
+                    style={{ 
+                      ':focus': { borderColor: currentColor },
+                      borderColor: formData.name ? currentColor : '#374151'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = currentColor}
+                    onBlur={(e) => e.target.style.borderColor = formData.name ? currentColor : '#374151'}
                     placeholder="Your name"
                   />
                 </div>
@@ -137,7 +143,13 @@ const ContactSection = ({ contact, currentColor }) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white"
+                    style={{ 
+                      ':focus': { borderColor: currentColor },
+                      borderColor: formData.email ? currentColor : '#374151'
+                    }}
+                    onFocus={(e) => e.target.style.borderColor = currentColor}
+                    onBlur={(e) => e.target.style.borderColor = formData.email ? currentColor : '#374151'}
                     placeholder="your@email.com"
                   />
                 </div>
@@ -153,7 +165,13 @@ const ContactSection = ({ contact, currentColor }) => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white"
+                  style={{ 
+                    ':focus': { borderColor: currentColor },
+                    borderColor: formData.subject ? currentColor : '#374151'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = currentColor}
+                  onBlur={(e) => e.target.style.borderColor = formData.subject ? currentColor : '#374151'}
                   placeholder="Project inquiry"
                 />
               </div>
@@ -168,14 +186,26 @@ const ContactSection = ({ contact, currentColor }) => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white resize-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white resize-none"
+                  style={{ 
+                    ':focus': { borderColor: currentColor },
+                    borderColor: formData.message ? currentColor : '#374151'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = currentColor}
+                  onBlur={(e) => e.target.style.borderColor = formData.message ? currentColor : '#374151'}
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+                className="w-full flex items-center justify-center space-x-2 py-4 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+                style={{ 
+                  backgroundColor: currentColor,
+                  ':hover': { filter: 'brightness(1.1)' }
+                }}
+                onMouseEnter={(e) => e.target.style.filter = 'brightness(1.1)'}
+                onMouseLeave={(e) => e.target.style.filter = 'brightness(1)'}
               >
                 <Send size={20} />
                 <span>Send Message</span>
