@@ -7,7 +7,6 @@ const RightNavbar = ({ activeSection, onSectionClick, currentColor }) => {
     { id: 'about', icon: User, label: 'About' },
     { id: 'resume', icon: FileText, label: 'Resume' },
     { id: 'portfolio', icon: Briefcase, label: 'Portfolio' },
-    { id: 'services', icon: Settings, label: 'Services' },
     { id: 'contact', icon: Mail, label: 'Contact' },
   ];
 
