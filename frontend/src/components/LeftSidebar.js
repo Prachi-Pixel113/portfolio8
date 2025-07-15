@@ -10,30 +10,32 @@ const LeftSidebar = ({ profile, currentColor }) => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-80 bg-gray-900 border-r border-gray-800 flex flex-col">
-      {/* Profile Section */}
-      <div className="p-8 text-center flex-1 flex flex-col justify-center">
+    <div className="fixed left-8 top-8 z-40">
+      {/* Profile Card */}
+      <div className="bg-gray-800 rounded-2xl p-8 shadow-2xl border border-gray-700 w-80">
         {/* Profile Picture */}
-        <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gray-700">
-          <img 
-            src={profile.image} 
-            alt={profile.name}
-            className="w-full h-full object-cover"
-          />
+        <div className="text-center mb-6">
+          <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-600">
+            <img 
+              src={profile.image} 
+              alt={profile.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+          {/* Name and Title */}
+          <h1 className="text-2xl font-bold text-white mb-1">{profile.name}</h1>
+          <p className="text-gray-400 text-sm">{profile.title}</p>
         </div>
         
-        {/* Name and Title */}
-        <h1 className="text-3xl font-bold text-white mb-2">{profile.name}</h1>
-        <p className="text-lg text-gray-400 mb-6">{profile.title}</p>
-        
         {/* Contact Info */}
-        <div className="space-y-2 mb-8">
-          <p className="text-white">{profile.email}</p>
-          <p className="text-gray-400">{profile.location}</p>
+        <div className="text-center mb-6">
+          <p className="text-white text-sm mb-1">{profile.email}</p>
+          <p className="text-gray-400 text-sm">{profile.location}</p>
         </div>
         
         {/* Social Links */}
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex justify-center space-x-3 mb-6">
           {socialLinks.map((social) => {
             const Icon = social.icon;
             return (
@@ -42,10 +44,10 @@ const LeftSidebar = ({ profile, currentColor }) => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center border border-gray-600 rounded-full hover:border-gray-400 transition-colors duration-200"
+                className="w-9 h-9 flex items-center justify-center border border-gray-600 rounded-full hover:border-gray-400 transition-colors duration-200"
                 title={social.name}
               >
-                <Icon size={18} className="text-gray-400 hover:text-white" />
+                <Icon size={16} className="text-gray-400 hover:text-white" />
               </a>
             );
           })}
@@ -53,18 +55,18 @@ const LeftSidebar = ({ profile, currentColor }) => {
         
         {/* Hire Me Button */}
         <button
-          className="w-full py-4 text-white font-semibold rounded-lg transition-all duration-200 hover:scale-105 shadow-lg"
+          className="w-full py-3 text-white font-semibold rounded-lg transition-all duration-200 hover:scale-105 shadow-lg text-sm"
           style={{ backgroundColor: currentColor }}
         >
           HIRE ME!
         </button>
-      </div>
-      
-      {/* Footer */}
-      <div className="p-6 border-t border-gray-800">
-        <p className="text-gray-500 text-sm text-center">
-          © 2024 {profile.name}. All Rights Reserved
-        </p>
+        
+        {/* Copyright */}
+        <div className="text-center mt-6 pt-4 border-t border-gray-700">
+          <p className="text-gray-500 text-xs">
+            © 2024 {profile.name}. All Rights Reserved
+          </p>
+        </div>
       </div>
     </div>
   );
