@@ -46,7 +46,7 @@ const HeroSection = ({ profile, currentColor }) => {
               </div>
             </div>
             {/* Circular Text */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
               <svg className="w-40 h-40 absolute" viewBox="0 0 160 160">
                 <defs>
                   <path
@@ -56,7 +56,7 @@ const HeroSection = ({ profile, currentColor }) => {
                 </defs>
                 <text className="text-xs fill-gray-500 uppercase tracking-wider">
                   <textPath href="#circle" startOffset="0%">
-                    MY PROJECTS • MY PROJECTS • 
+                    MY PROJECTS • MY PROJECTS • MY PROJECTS •
                   </textPath>
                 </text>
               </svg>
