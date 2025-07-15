@@ -101,21 +101,14 @@ const Portfolio = () => {
         onSettingsChange={setSettings}
       />
 
-      {/* Left Sidebar */}
-      <LeftSidebar 
-        activeSection={activeSection}
-        onSectionClick={handleSectionClick}
-        onSettingsClick={() => setShowSettings(true)}
+      {/* Profile Card */}
+      <ProfileCard 
         profile={mockData.profile}
         currentColor={getCurrentColor()}
       />
       
-      {/* Right Content Area */}
-      <div className={`transition-all duration-300 ${
-        settings.layoutStyle === 'boxed' 
-          ? 'ml-80 mr-8 max-w-6xl' 
-          : 'ml-80'
-      }`}>
+      {/* Main Content Area */}
+      <div className="ml-80">
         <section id="home" className="section">
           <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
         </section>
