@@ -89,7 +89,12 @@ const ContactSection = ({ contact, currentColor }) => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-900 hover:bg-green-500 rounded-lg flex items-center justify-center transition-colors duration-200 border border-gray-800"
+                    className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center transition-colors duration-200 border border-gray-800"
+                    style={{
+                      ':hover': { backgroundColor: currentColor }
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = currentColor}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#111827'}
                   >
                     <span className="text-xl">{social.icon}</span>
                   </a>
