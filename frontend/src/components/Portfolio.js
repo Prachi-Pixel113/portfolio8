@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LeftSidebar from './LeftSidebar';
+import ProfileCard from './ProfileCard';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ResumeSection from './ResumeSection';
