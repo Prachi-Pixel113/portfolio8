@@ -27,7 +27,7 @@ const ContactSection = ({ contact, currentColor }) => {
     <div className="min-h-screen py-20 px-8 lg:px-16 bg-black">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-          Get In <span style={{ color: theme.primary }}>Touch</span>
+          Get In <span style={{ color: currentColor }}>Touch</span>
         </h2>
 
         <div className="text-center mb-16">
