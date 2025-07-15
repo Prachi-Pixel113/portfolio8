@@ -12,11 +12,8 @@ import { mockData } from '../data/mockData';
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoading, setIsLoading] = useState(true);
-  const [showSettings, setShowSettings] = useState(false);
   const [settings, setSettings] = useState({
     colorTheme: 'green',
-    backgroundStyle: 'curves',
-    layoutStyle: 'full',
     colors: {
       green: '#10b981',
       blue: '#3b82f6',
