@@ -159,10 +159,6 @@ const Portfolio = () => {
           <PortfolioSection projects={mockData.projects} currentColor={getCurrentColor()} />
         </section>
         
-        <section id="services" className="section scroll-mt-8">
-          <ServicesSection services={mockData.services} currentColor={getCurrentColor()} />
-        </section>
-        
         <section id="contact" className="section scroll-mt-8">
           <ContactSection contact={mockData.contact} currentColor={getCurrentColor()} />
         </section>
