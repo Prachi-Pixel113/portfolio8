@@ -13,15 +13,15 @@ const RightSidebar = ({ activeSection, onSectionClick, currentColor }) => {
 
   return (
     <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40">
-      <div className="bg-gray-800 rounded-2xl p-4 border border-gray-700 shadow-2xl">
-        <nav className="space-y-4">
+      <div className="bg-gray-800 rounded-2xl p-3 border border-gray-700 shadow-2xl">
+        <nav className="space-y-3">
           {menuItems.map((item) => {
             const Icon = item.icon;
             return (
               <button
                 key={item.id}
                 onClick={() => onSectionClick(item.id)}
-                className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-200 group relative ${
+                className={`w-11 h-11 flex items-center justify-center rounded-xl transition-all duration-200 group relative ${
                   activeSection === item.id
                     ? 'text-white shadow-lg'
                     : 'text-gray-400 hover:text-white hover:bg-gray-700'
@@ -31,10 +31,10 @@ const RightSidebar = ({ activeSection, onSectionClick, currentColor }) => {
                 }}
                 title={item.label}
               >
-                <Icon size={20} />
+                <Icon size={18} />
                 
                 {/* Tooltip */}
-                <div className="absolute right-full mr-3 px-2 py-1 bg-gray-900 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                <div className="absolute right-full mr-3 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                   {item.label}
                 </div>
               </button>
