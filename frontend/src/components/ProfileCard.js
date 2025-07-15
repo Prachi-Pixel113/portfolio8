@@ -1,7 +1,7 @@
 import React from 'react';
-import { Twitter, Github, Linkedin, Instagram, Mail } from 'lucide-react';
+import { Twitter, Github, Linkedin, Instagram, Mail, Settings } from 'lucide-react';
 
-const ProfileCard = ({ profile, currentColor }) => {
+const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
   const socialLinks = [
     { name: 'Twitter', url: profile.social.twitter, icon: Twitter },
     { name: 'GitHub', url: profile.social.github, icon: Github },
@@ -12,6 +12,16 @@ const ProfileCard = ({ profile, currentColor }) => {
   return (
     <div className="fixed left-0 top-0 h-full w-80 bg-gray-900 border-r border-gray-800 flex flex-col justify-between p-8">
       
+      {/* Settings Button */}
+      <div className="absolute top-4 right-4">
+        <button
+          onClick={onSettingsClick}
+          className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+        >
+          <Settings size={16} />
+        </button>
+      </div>
+
       {/* Profile Section */}
       <div className="flex-1 flex flex-col justify-center">
         {/* Profile Picture */}
