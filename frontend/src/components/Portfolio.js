@@ -33,32 +33,6 @@ const Portfolio = () => {
     setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'resume', 'portfolio', 'services', 'contact'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i]);
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleSectionClick = (sectionId) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const getCurrentColor = () => {
     return settings.colors[settings.colorTheme];
   };
