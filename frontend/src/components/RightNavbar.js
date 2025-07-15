@@ -1,0 +1,49 @@
+import React from 'react';
+import { Home, User, FileText, Briefcase, Settings, Mail } from 'lucide-react';
+
+const RightNavbar = ({ activeSection, onSectionClick, currentColor }) => {
+  const navItems = [
+    { id: 'home', icon: Home, label: 'Home' },
+    { id: 'about', icon: User, label: 'About' },
+    { id: 'resume', icon: FileText, label: 'Resume' },
+    { id: 'portfolio', icon: Briefcase, label: 'Portfolio' },
+    { id: 'services', icon: Settings, label: 'Services' },
+    { id: 'contact', icon: Mail, label: 'Contact' },
+  ];
+
+  return (
+    <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40">
+      <div className="flex flex-col space-y-4">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <button
+              key={item.id}
+              onClick={() => onSectionClick(item.id)}
+              className={`w-12 h-12 flex items-center justify-center rounded-full transition-all duration-200 group relative ${
+                activeSection === item.id
+                  ? 'text-white shadow-lg'
+                  : 'text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700'
+              }`}
+              style={{
+                backgroundColor: activeSection === item.id ? currentColor : undefined
+              }}
+              title={item.label}
+            >
+              <Icon size={20} />
+              
+              {/* Tooltip */}
+              <div className="absolute right-16 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                <div className="bg-gray-800 text-white text-sm px-2 py-1 rounded whitespace-nowrap">
+                  {item.label}
+                </div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default RightNavbar;
