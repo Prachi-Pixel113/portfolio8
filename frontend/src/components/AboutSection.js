@@ -17,27 +17,7 @@ const AboutSection = ({ about, currentColor }) => {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          
-          {/* Left Side - Image */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <div className="w-80 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-700">
-                <img 
-                  src={about.profileImage} 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Floating Badge */}
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center shadow-lg border-4 border-gray-800" style={{ backgroundColor: currentColor }}>
-                <Code size={24} className="text-white" />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Content */}
+        <div className="max-w-4xl mx-auto text-center mb-20">
           <div className="space-y-8">
             <div>
               <h3 className="text-3xl font-bold text-white mb-6">{about.title}</h3>
@@ -49,7 +29,7 @@ const AboutSection = ({ about, currentColor }) => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               <button 
                 className="flex items-center gap-3 px-6 py-3 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
                 style={{ backgroundColor: currentColor }}
