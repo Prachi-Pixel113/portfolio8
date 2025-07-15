@@ -64,10 +64,10 @@ const HeroSection = ({ profile, currentColor }) => {
         </div>
 
         {/* Circular Element */}
-        <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border-2 border-gray-600 flex items-center justify-center">
+        <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border-2 border-gray-600 flex items-center justify-center animate-spin-slow">
           <div className="text-center">
-            <div className="text-xs text-gray-400 mb-1">MY</div>
-            <div className="text-xs text-gray-400">PROJECTS</div>
+            <div className="text-xs text-gray-400 font-medium">MY</div>
+            <div className="text-xs text-gray-400 font-medium">PROJECTS</div>
           </div>
         </div>
       </div>
