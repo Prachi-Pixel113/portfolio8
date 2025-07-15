@@ -144,27 +144,27 @@ const Portfolio = () => {
       
       {/* Main Content Area */}
       <div className="ml-80">
-        <section id="home" className="section">
+        <section id="home" className="section scroll-mt-8">
           <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
         </section>
         
-        <section id="about" className="section">
+        <section id="about" className="section scroll-mt-8">
           <AboutSection about={mockData.about} currentColor={getCurrentColor()} />
         </section>
         
-        <section id="resume" className="section">
+        <section id="resume" className="section scroll-mt-8">
           <ResumeSection resume={mockData.resume} currentColor={getCurrentColor()} />
         </section>
         
-        <section id="portfolio" className="section">
+        <section id="portfolio" className="section scroll-mt-8">
           <PortfolioSection projects={mockData.projects} currentColor={getCurrentColor()} />
         </section>
         
-        <section id="services" className="section">
+        <section id="services" className="section scroll-mt-8">
           <ServicesSection services={mockData.services} currentColor={getCurrentColor()} />
         </section>
         
-        <section id="contact" className="section">
+        <section id="contact" className="section scroll-mt-8">
           <ContactSection contact={mockData.contact} currentColor={getCurrentColor()} />
         </section>
       </div>
