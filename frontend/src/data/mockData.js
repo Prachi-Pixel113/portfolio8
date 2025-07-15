@@ -266,14 +266,14 @@ export const mockData = {
   ],
 
   contact: {
-    email: "prachi.agarwal@example.com",
-    phone: "+91 9876543210",
-    location: "Mumbai, India",
+    email: "hello@drake.design",
+    phone: "+1 (555) 123-4567",
+    location: "Los Angeles, CA",
     social: [
-      { name: "GitHub", url: "https://github.com/prachi-agarwal", icon: "🐙" },
-      { name: "LinkedIn", url: "https://linkedin.com/in/prachi-agarwal", icon: "💼" },
-      { name: "Twitter", url: "https://twitter.com/prachi_agarwal", icon: "🐦" },
-      { name: "Instagram", url: "https://instagram.com/prachi_agarwal", icon: "📷" }
+      { name: "GitHub", url: "https://github.com/drake-design", icon: "🐙" },
+      { name: "LinkedIn", url: "https://linkedin.com/in/drake-design", icon: "💼" },
+      { name: "Twitter", url: "https://twitter.com/drake_design", icon: "🐦" },
+      { name: "Instagram", url: "https://instagram.com/drake_design", icon: "📷" }
     ]
   }
 };
