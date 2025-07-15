@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 
-const ContactSection = ({ contact }) => {
+const ContactSection = ({ contact, theme }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,10 +24,10 @@ const ContactSection = ({ contact }) => {
   };
 
   return (
-    <div className="min-h-screen py-20 px-4 lg:px-8 bg-gray-900">
+    <div className="min-h-screen py-20 px-8 lg:px-16 bg-black">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-          Get In Touch
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+          Get In <span style={{ color: theme.primary }}>Touch</span>
         </h2>
 
         <div className="text-center mb-16">
@@ -49,7 +49,7 @@ const ContactSection = ({ contact }) => {
 
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
                   <Mail size={20} className="text-white" />
                 </div>
                 <div>
@@ -59,7 +59,7 @@ const ContactSection = ({ contact }) => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
                   <Phone size={20} className="text-white" />
                 </div>
                 <div>
@@ -69,7 +69,7 @@ const ContactSection = ({ contact }) => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
                   <MapPin size={20} className="text-white" />
                 </div>
                 <div>
@@ -89,7 +89,7 @@ const ContactSection = ({ contact }) => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="w-12 h-12 bg-gray-900 hover:bg-green-500 rounded-lg flex items-center justify-center transition-colors duration-200 border border-gray-800"
                   >
                     <span className="text-xl">{social.icon}</span>
                   </a>
@@ -99,9 +99,9 @@ const ContactSection = ({ contact }) => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-800 p-8 rounded-xl shadow-lg">
+          <div className="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <MessageCircle size={28} className="mr-3 text-blue-400" />
+              <MessageCircle size={28} className="mr-3 text-green-400" />
               Send Message
             </h3>
 
@@ -117,7 +117,7 @@ const ContactSection = ({ contact }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white"
                     placeholder="Your name"
                   />
                 </div>
@@ -132,7 +132,7 @@ const ContactSection = ({ contact }) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -148,7 +148,7 @@ const ContactSection = ({ contact }) => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-white"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white"
                   placeholder="Project inquiry"
                 />
               </div>
@@ -163,14 +163,14 @@ const ContactSection = ({ contact }) => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-white resize-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-green-500 text-white resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+                className="w-full flex items-center justify-center space-x-2 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
               >
                 <Send size={20} />
                 <span>Send Message</span>
