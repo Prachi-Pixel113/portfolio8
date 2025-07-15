@@ -180,7 +180,7 @@ const SettingsPanel = ({ isOpen, onClose, settings, onSettingsChange }) => {
                 onClick={() => {
                   const randomColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
                   const randomBg = backgroundOptions[Math.floor(Math.random() * backgroundOptions.length)];
-                  setSettings(prev => ({
+                  onSettingsChange(prev => ({
                     ...prev,
                     colorTheme: randomColor.key,
                     backgroundStyle: randomBg.key
