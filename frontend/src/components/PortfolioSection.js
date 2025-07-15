@@ -122,19 +122,19 @@ const PortfolioSection = ({ projects, currentColor }) => {
         {/* Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="text-4xl font-bold text-green-400 mb-2">50+</div>
+            <div className="text-4xl font-bold mb-2" style={{ color: currentColor }}>50+</div>
             <div className="text-gray-400">Projects Completed</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-green-400 mb-2">30+</div>
+            <div className="text-4xl font-bold mb-2" style={{ color: currentColor }}>30+</div>
             <div className="text-gray-400">Happy Clients</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-green-400 mb-2">3+</div>
+            <div className="text-4xl font-bold mb-2" style={{ color: currentColor }}>3+</div>
             <div className="text-gray-400">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-green-400 mb-2">15+</div>
+            <div className="text-4xl font-bold mb-2" style={{ color: currentColor }}>15+</div>
             <div className="text-gray-400">Technologies</div>
           </div>
         </div>
