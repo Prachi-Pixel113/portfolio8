@@ -134,6 +134,13 @@ const Portfolio = () => {
         currentColor={getCurrentColor()}
         onSettingsClick={() => setShowSettings(true)}
       />
+
+      {/* Right Navigation */}
+      <RightNavbar
+        activeSection={activeSection}
+        onSectionClick={handleSectionClick}
+        currentColor={getCurrentColor()}
+      />
       
       {/* Main Content Area */}
       <div className="ml-80">
