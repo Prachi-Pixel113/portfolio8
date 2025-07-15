@@ -1,32 +1,43 @@
 import React from 'react';
-import { Download, Calendar, MapPin, Phone, Mail } from 'lucide-react';
+import { Download, Calendar, MapPin, Phone, Mail, Award, Code, Coffee } from 'lucide-react';
 
-const AboutSection = ({ about, theme }) => {
+const AboutSection = ({ about, currentColor }) => {
   return (
-    <div className="min-h-screen py-20 px-8 lg:px-16 bg-black">
+    <div className="min-h-screen py-20 px-8 lg:px-16 bg-gray-900">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-          About <span style={{ color: theme.primary }}>Me</span>
-        </h2>
+        
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            About <span style={{ color: currentColor }}>Me</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Get to know more about who I am, what I do, and what inspires me
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          
+          {/* Left Side - Image */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="w-80 h-80 rounded-2xl overflow-hidden border-4 border-gray-800 shadow-2xl">
+              <div className="w-80 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-700">
                 <img 
                   src={about.profileImage} 
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
-                <span className="text-2xl">💻</span>
+              
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center shadow-lg border-4 border-gray-800" style={{ backgroundColor: currentColor }}>
+                <Code size={24} className="text-white" />
               </div>
             </div>
           </div>
 
-          {/* About Content */}
+          {/* Right Side - Content */}
           <div className="space-y-8">
             <div>
               <h3 className="text-3xl font-bold text-white mb-6">{about.title}</h3>
@@ -38,19 +49,35 @@ const AboutSection = ({ about, theme }) => {
               </p>
             </div>
 
-            <button className="flex items-center gap-3 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg">
-              <Download size={20} />
-              Download Resume
-            </button>
+            <div className="flex flex-wrap gap-4">
+              <button 
+                className="flex items-center gap-3 px-6 py-3 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+                style={{ backgroundColor: currentColor }}
+              >
+                <Download size={20} />
+                Download CV
+              </button>
+              
+              <button 
+                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                className="flex items-center gap-3 px-6 py-3 bg-transparent border-2 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105"
+                style={{ borderColor: currentColor, color: currentColor }}
+              >
+                <Coffee size={20} />
+                Let's Talk
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Info Grid */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Info Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {about.info.map((item, index) => (
-            <div key={index} className="bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-800">
+            <div key={index} className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-700">
               <div className="flex items-center mb-4">
-                <item.icon className="text-green-400 mr-3" size={24} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: currentColor }}>
+                  <item.icon size={20} className="text-white" />
+                </div>
                 <h4 className="text-lg font-semibold text-white">{item.label}</h4>
               </div>
               <p className="text-gray-300">{item.value}</p>
@@ -58,24 +85,53 @@ const AboutSection = ({ about, theme }) => {
           ))}
         </div>
 
-        {/* Skills */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12 text-white">Technical Skills</h3>
+        {/* Skills Section */}
+        <div>
+          <h3 className="text-3xl font-bold text-center mb-12 text-white">
+            My <span style={{ color: currentColor }}>Skills</span>
+          </h3>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {about.skills.map((skill, index) => (
-              <div key={index} className="space-y-2">
+              <div key={index} className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-white font-medium">{skill.name}</span>
-                  <span style={{ color: theme.primary }}>{skill.level}%</span>
+                  <span className="text-white font-medium text-lg">{skill.name}</span>
+                  <span className="text-gray-400 font-semibold">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-800 rounded-full h-2">
+                <div className="w-full bg-gray-700 rounded-full h-3">
                   <div 
-                    className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
+                    className="h-3 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
+                    style={{ 
+                      width: `${skill.level}%`,
+                      backgroundColor: currentColor
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-pulse"></div>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Fun Facts */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700">
+            <Coffee size={32} className="mx-auto mb-4 text-yellow-400" />
+            <h4 className="text-xl font-bold text-white mb-2">Coffee Lover</h4>
+            <p className="text-gray-400">500+ cups of coffee consumed while coding</p>
+          </div>
+          
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700">
+            <Code size={32} className="mx-auto mb-4" style={{ color: currentColor }} />
+            <h4 className="text-xl font-bold text-white mb-2">Clean Code</h4>
+            <p className="text-gray-400">Always writing readable and maintainable code</p>
+          </div>
+          
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700">
+            <Award size={32} className="mx-auto mb-4 text-purple-400" />
+            <h4 className="text-xl font-bold text-white mb-2">Problem Solver</h4>
+            <p className="text-gray-400">Love tackling complex challenges</p>
           </div>
         </div>
       </div>

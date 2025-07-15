@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { ChevronDown, ArrowRight, Play } from 'lucide-react';
 
-const HeroSection = ({ profile, theme }) => {
+const HeroSection = ({ profile, currentColor }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -34,116 +34,95 @@ const HeroSection = ({ profile, theme }) => {
     return () => clearTimeout(timeout);
   }, [displayText, currentTitle, isDeleting]);
 
-  const socialLinks = [
-    { icon: Twitter, url: profile.social.twitter },
-    { icon: Github, url: profile.social.github },
-    { icon: Linkedin, url: profile.social.linkedin },
-    { icon: Mail, url: `mailto:${profile.email}` }
-  ];
-
   return (
-    <div className="min-h-screen flex items-center px-8 lg:px-16 relative">
+    <div className="min-h-screen flex items-center justify-center px-8 lg:px-16 relative">
       
-      {/* Left Side - Profile Card */}
-      <div className="w-full lg:w-1/2 z-10">
-        <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-800 max-w-md">
-          
-          {/* Profile Image */}
-          <div className="mb-6">
-            <div className="w-48 h-64 rounded-2xl overflow-hidden border-4 border-gray-700 mx-auto">
-              <img 
-                src={profile.image} 
-                alt={profile.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Profile Info */}
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-white mb-2">{profile.name}</h2>
-            <p className="text-gray-400 mb-4">{profile.title}</p>
-            <p className="text-gray-500 text-sm mb-4">{profile.email}</p>
-            <p className="text-gray-500 text-sm mb-6">Base in {profile.location}</p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center space-x-4 mb-6">
-            {socialLinks.map((social, index) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-colors duration-200"
-                >
-                  <Icon size={18} className="text-gray-400 hover:text-white" />
-                </a>
-              );
-            })}
-          </div>
-
-          {/* Hire Me Button */}
-          <button
-            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-            className="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-105"
-          >
-            HIRE ME!
-          </button>
-
-          {/* Copyright */}
-          <div className="text-center mt-6">
-            <p className="text-gray-600 text-xs">© 2024 {profile.name}. All Rights Reserved</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Right Side - Main Content */}
-      <div className="w-full lg:w-1/2 lg:pl-16 mt-8 lg:mt-0">
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto text-center">
         
-        {/* Introduce Button */}
-        <div className="mb-8">
-          <button className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full text-sm font-medium transition-colors duration-200">
-            INTRODUCE
-          </button>
+        {/* Welcome Badge */}
+        <div className="mb-8 animate-fadeIn">
+          <span className="inline-block px-6 py-3 bg-gray-800 text-gray-300 rounded-full text-sm font-medium border border-gray-700">
+            👋 Welcome to my portfolio
+          </span>
         </div>
 
         {/* Main Heading */}
-        <div className="mb-8">
-          <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-4">
-            Say Hi from{' '}
-            <span style={{ color: theme.primary }}>Prachi</span>,<br />
-            <span className="text-white">Framer Designer and</span><br />
-            <span className="text-white">Developer</span>
+        <div className="mb-8 animate-slideInLeft">
+          <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+            Hi, I'm <span style={{ color: currentColor }}>{profile.name}</span>
           </h1>
           
-          <div className="h-12 flex items-center mt-4">
-            <p className="text-xl text-gray-400">
-              <span style={{ color: theme.primary }}>{displayText}</span>
-              <span className="animate-pulse" style={{ color: theme.primary }}>|</span>
-            </p>
+          {/* Animated Typing Text */}
+          <div className="h-16 flex items-center justify-center">
+            <h2 className="text-2xl lg:text-3xl text-gray-300 font-light">
+              I'm a{' '}
+              <span style={{ color: currentColor }} className="font-semibold">
+                {displayText}
+              </span>
+              <span className="animate-pulse" style={{ color: currentColor }}>|</span>
+            </h2>
           </div>
         </div>
 
-        <div className="mb-8">
-          <p className="text-gray-400 text-lg leading-relaxed max-w-lg">
-            I design and code beautifully simple things and I love what I do.<br />
-            Just simple like that!
+        {/* Description */}
+        <div className="mb-12 animate-slideInRight">
+          <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            {profile.tagline}
           </p>
         </div>
 
-        {/* Circular Badge */}
-        <div className="relative">
-          <div className="w-32 h-32 border-2 border-gray-700 rounded-full flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-xs text-gray-500 uppercase tracking-widest">
-                <span className="block">My</span>
-                <span className="block">Projects</span>
-              </div>
-              <ChevronDown size={20} className="text-gray-400 mx-auto mt-2" />
-            </div>
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fadeIn">
+          <button
+            onClick={() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })}
+            className="group px-8 py-4 text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+            style={{ backgroundColor: currentColor }}
+          >
+            <Play size={20} />
+            <span>View My Work</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+          </button>
+          
+          <button
+            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 py-4 bg-transparent border-2 text-white hover:text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2"
+            style={{ 
+              borderColor: currentColor,
+              color: currentColor
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = currentColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+          >
+            <span>Let's Talk</span>
+          </button>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 animate-fadeIn">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-2">3+</div>
+            <div className="text-gray-400 text-sm">Years Experience</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-2">50+</div>
+            <div className="text-gray-400 text-sm">Projects Done</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-2">30+</div>
+            <div className="text-gray-400 text-sm">Happy Clients</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-2">15+</div>
+            <div className="text-gray-400 text-sm">Technologies</div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="animate-bounce">
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-gray-400 text-sm">Scroll down to explore</span>
+            <ChevronDown size={24} className="text-gray-400" />
           </div>
         </div>
       </div>
