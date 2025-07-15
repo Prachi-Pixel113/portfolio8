@@ -87,7 +87,7 @@ const Portfolio = () => {
       />
       
       {/* Main Content Area */}
-      <div className="ml-80 mr-16">
+      <div className="pl-8 pr-16">
         <section id="home" className="section">
           <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
         </section>
