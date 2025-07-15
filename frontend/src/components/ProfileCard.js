@@ -10,21 +10,22 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-80 bg-gray-900 border-r border-gray-800 flex flex-col justify-between p-8">
+    <div className="fixed left-0 top-0 h-full w-80 bg-gray-900 border-r border-gray-800 flex flex-col justify-center p-8">
       
-      {/* Settings Button - Left Side */}
-      <div className="absolute top-4 left-4">
-        <button
-          onClick={onSettingsClick}
-          className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-        >
-          <Settings size={16} />
-        </button>
-      </div>
-
       {/* Profile Card */}
-      <div className="flex-1 flex flex-col justify-center">
-        <div className="bg-gray-800 rounded-3xl p-8 border border-gray-700 shadow-xl">
+      <div className="relative">
+        {/* Settings Button on Border */}
+        <div className="absolute -top-4 left-4 z-10">
+          <button
+            onClick={onSettingsClick}
+            className="w-8 h-8 flex items-center justify-center bg-gray-900 border border-gray-700 rounded-full text-gray-400 hover:text-white transition-colors"
+          >
+            <Settings size={16} />
+          </button>
+        </div>
+
+        {/* Transparent Profile Card with Border */}
+        <div className="border-2 border-gray-700 rounded-3xl p-8 bg-transparent">
           
           {/* Profile Picture */}
           <div className="text-center mb-6">
@@ -77,11 +78,6 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
             </button>
           </div>
         </div>
-      </div>
-      
-      {/* Footer */}
-      <div className="text-center text-gray-500 text-xs mt-4">
-        © 2022 Drake. All Rights Reserved
       </div>
     </div>
   );
