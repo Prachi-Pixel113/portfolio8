@@ -18,23 +18,23 @@ export const mockData = {
   },
 
   about: {
-    title: "Full Stack Developer & UI/UX Enthusiast",
-    description: "I'm a passionate full stack developer with 3+ years of experience creating digital experiences that combine beautiful design with robust functionality. I love turning complex problems into simple, elegant solutions.",
-    details: "When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing my knowledge through technical writing. I believe in continuous learning and staying updated with the latest trends in web development.",
-    profileImage: "https://images.unsplash.com/photo-1494790108755-2616b96e7b5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    title: "Framer Designer & Developer",
+    description: "I design and code beautifully simple things and I love what I do. Just simple like that!",
+    details: "When I'm not designing and coding, you can find me exploring new creative possibilities, working on personal projects, or sharing my knowledge with the design community. I believe in the power of simple, elegant solutions.",
+    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     info: [
-      { icon: Calendar, label: "Age", value: "25 Years" },
-      { icon: MapPin, label: "Location", value: "Mumbai, India" },
-      { icon: Phone, label: "Phone", value: "+91 9876543210" },
-      { icon: Mail, label: "Email", value: "prachi.agarwal@example.com" }
+      { icon: Calendar, label: "Age", value: "28 Years" },
+      { icon: MapPin, label: "Location", value: "Los Angeles, CA" },
+      { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
+      { icon: Mail, label: "Email", value: "hello@drake.design" }
     ],
     skills: [
-      { name: "React/Next.js", level: 95 },
-      { name: "Node.js/Express", level: 90 },
-      { name: "JavaScript/TypeScript", level: 92 },
-      { name: "Python/Django", level: 88 },
-      { name: "MongoDB/PostgreSQL", level: 85 },
-      { name: "UI/UX Design", level: 80 }
+      { name: "Framer", level: 95 },
+      { name: "React/Next.js", level: 90 },
+      { name: "UI/UX Design", level: 92 },
+      { name: "JavaScript/TypeScript", level: 88 },
+      { name: "Figma", level: 85 },
+      { name: "Prototyping", level: 90 }
     ]
   },
 
