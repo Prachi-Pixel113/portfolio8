@@ -49,7 +49,7 @@ const ContactSection = ({ contact, currentColor }) => {
 
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
                   <Mail size={20} className="text-white" />
                 </div>
                 <div>
@@ -59,7 +59,7 @@ const ContactSection = ({ contact, currentColor }) => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
                   <Phone size={20} className="text-white" />
                 </div>
                 <div>
@@ -69,7 +69,7 @@ const ContactSection = ({ contact, currentColor }) => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
                   <MapPin size={20} className="text-white" />
                 </div>
                 <div>
