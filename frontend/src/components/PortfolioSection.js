@@ -75,7 +75,7 @@ const PortfolioSection = ({ projects, currentColor }) => {
         <div className="flex justify-between items-center">
           <span className="text-sm text-gray-500">{project.date}</span>
           <div className="flex space-x-2">
-            <span style={{ color: theme.primary }} className="text-sm">View Project</span>
+            <span style={{ color: currentColor }} className="text-sm">View Project</span>
           </div>
         </div>
       </div>
