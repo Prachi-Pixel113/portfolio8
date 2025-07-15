@@ -132,5 +132,3 @@ const LeftSidebar = ({ activeSection, onSectionClick, onSettingsClick, profile, 
 };
 
 export default LeftSidebar;
-
-export default LeftSidebar;
