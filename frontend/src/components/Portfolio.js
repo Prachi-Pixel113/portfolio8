@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import LeftSidebar from './LeftSidebar';
+import RightSidebar from './RightSidebar';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ResumeSection from './ResumeSection';
 import PortfolioSection from './PortfolioSection';
 import ServicesSection from './ServicesSection';
 import ContactSection from './ContactSection';
-import SettingsPanel from './SettingsPanel';
 import { mockData } from '../data/mockData';
 
 const Portfolio = () => {
