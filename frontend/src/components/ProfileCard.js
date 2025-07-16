@@ -10,7 +10,7 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-80 bg-gray-900 border-r border-gray-800 flex flex-col justify-center p-8">
+    <div className="fixed left-0 top-0 h-full w-80 flex flex-col justify-center p-8">
       
       {/* Profile Card */}
       <div className="relative">
