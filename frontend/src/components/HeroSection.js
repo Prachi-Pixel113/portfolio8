@@ -14,12 +14,23 @@ const HeroSection = ({ profile, currentColor }) => {
       </div>
 
       <div className="relative z-10 text-left max-w-4xl">
-        {/* Introduce Text */}
-        <div className="flex items-center mb-8">
-          <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
-            <span className="text-white text-sm">🏠</span>
+        {/* Introduce and About Me Text - Side by Side */}
+        <div className="flex items-center justify-between mb-8">
+          {/* Introduce Text */}
+          <div className="flex items-center">
+            <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white text-sm">🏠</span>
+            </div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider">INTRODUCE</span>
           </div>
-          <span className="text-gray-400 text-sm uppercase tracking-wider">INTRODUCE</span>
+          
+          {/* About Me Text */}
+          <div className="flex items-center">
+            <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white text-sm">👤</span>
+            </div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider">ABOUT ME</span>
+          </div>
         </div>
 
         {/* Main Heading */}
