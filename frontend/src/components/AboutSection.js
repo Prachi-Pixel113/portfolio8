@@ -3,7 +3,7 @@ import { Download, Calendar, MapPin, Phone, Mail, Award, Code, Coffee } from 'lu
 
 const AboutSection = ({ about, currentColor }) => {
   return (
-    <div className="min-h-screen py-20 px-8 lg:px-16">
+    <div className="min-h-screen py-12 px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
