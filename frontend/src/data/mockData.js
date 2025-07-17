@@ -60,18 +60,6 @@ export const mockData = {
           "Collaborated with design teams to implement pixel-perfect UIs",
           "Maintained 98% client satisfaction rate"
         ]
-      },
-      {
-        title: "Junior Developer",
-        company: "StartUp Hub",
-        period: "2020 - 2021",
-        description: "Started my career working on various web development projects, gaining experience in both frontend and backend development.",
-        achievements: [
-          "Learned React, Node.js, and database management",
-          "Contributed to 8 different projects",
-          "Participated in agile development processes",
-          "Received 'Rising Star' award for exceptional performance"
-        ]
       }
     ],
     education: [
