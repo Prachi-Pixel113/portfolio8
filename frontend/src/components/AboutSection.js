@@ -6,10 +6,10 @@ const AboutSection = ({ about, currentColor }) => {
     <div className="min-h-screen py-8 px-8 lg:px-16 flex items-center justify-center">
       <div className="max-w-4xl mx-auto">
         
-        {/* Section Header */}
-        <div className="text-left mb-8">
+        {/* Section Header - Center Aligned */}
+        <div className="text-center mb-8">
           {/* About Me Text */}
-          <div className="flex items-center mb-6">
+          <div className="flex items-center justify-center mb-6">
             <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
               <span className="text-white text-sm">👤</span>
             </div>
@@ -20,7 +20,7 @@ const AboutSection = ({ about, currentColor }) => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Get to know more about <span style={{ color: currentColor }}>me</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             What I am, what I do, and what inspires me
           </p>
         </div>
