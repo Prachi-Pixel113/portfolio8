@@ -34,16 +34,25 @@ const ServicesSection = ({ services }) => {
   };
 
   return (
-    <div className="min-h-screen py-20 px-4 lg:px-8 bg-gray-900">
+    <div className="min-h-screen py-20 px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-          My Services
-        </h2>
-
-        <div className="text-center mb-16">
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            I offer comprehensive development services to help bring your ideas to life. 
-            From concept to deployment, I'll work with you to create amazing digital experiences.
+        
+        {/* Section Header */}
+        <div className="text-left mb-16">
+          {/* Introduce Text */}
+          <div className="flex items-center mb-8">
+            <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white text-sm">⚡</span>
+            </div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider">MY SERVICES</span>
+          </div>
+          
+          {/* Main Heading */}
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            What I can <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">do for you</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl">
+            I offer comprehensive development services to help bring your ideas to life
           </p>
         </div>
 
