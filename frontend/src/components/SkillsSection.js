@@ -65,47 +65,6 @@ const SkillsSection = ({ skills, currentColor }) => {
           ))}
         </div>
 
-        {/* Categories */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Skill <span style={{ color: currentColor }}>Categories</span>
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
-                <Code size={24} className="text-white" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Frontend</h4>
-              <p className="text-gray-400 text-sm">Modern UI/UX Development</p>
-            </div>
-            
-            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
-                <Zap size={24} className="text-white" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Backend</h4>
-              <p className="text-gray-400 text-sm">Server & Database Management</p>
-            </div>
-            
-            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
-                <Target size={24} className="text-white" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Tools</h4>
-              <p className="text-gray-400 text-sm">Development & Design Tools</p>
-            </div>
-            
-            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
-                <Award size={24} className="text-white" />
-              </div>
-              <h4 className="text-white font-semibold mb-2">Soft Skills</h4>
-              <p className="text-gray-400 text-sm">Communication & Leadership</p>
-            </div>
-          </div>
-        </div>
-
         {/* Fun Facts */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-1">
