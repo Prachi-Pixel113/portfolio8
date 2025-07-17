@@ -24,14 +24,24 @@ const ContactSection = ({ contact, currentColor }) => {
   };
 
   return (
-    <div className="min-h-screen py-20 px-8 lg:px-16 bg-black">
+    <div className="min-h-screen py-20 px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-          Get In <span style={{ color: currentColor }}>Touch</span>
-        </h2>
-
-        <div className="text-center mb-16">
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+        
+        {/* Section Header */}
+        <div className="text-left mb-16">
+          {/* Introduce Text */}
+          <div className="flex items-center mb-8">
+            <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white text-sm">✉️</span>
+            </div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider">CONTACT ME</span>
+          </div>
+          
+          {/* Main Heading */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Get In <span style={{ color: currentColor }}>Touch</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl">
             Have a project in mind? I'd love to hear from you. Let's talk about how we can work together to bring your ideas to life.
           </p>
         </div>
