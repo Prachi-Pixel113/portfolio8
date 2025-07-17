@@ -74,20 +74,30 @@ const SkillsSection = ({ skills, currentColor }) => {
             return (
               <div key={index} className="relative group">
                 {/* Oval Background */}
-                <div className="bg-black rounded-full p-8 py-12 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-700 group-hover:border-gray-500">
+                <div className="bg-black rounded-full p-6 py-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-700 group-hover:border-gray-500 w-48 h-48 mx-auto flex items-center justify-center group-hover:bg-opacity-90"
+                     style={{
+                       backgroundColor: 'black',
+                       transition: 'background-color 0.5s ease'
+                     }}
+                     onMouseEnter={(e) => {
+                       e.currentTarget.style.backgroundColor = currentColor;
+                     }}
+                     onMouseLeave={(e) => {
+                       e.currentTarget.style.backgroundColor = 'black';
+                     }}>
                   <div className="text-center">
                     {/* Skill Icon */}
-                    <div className="text-6xl mb-6">
+                    <div className="text-4xl mb-3 transition-transform duration-300 group-hover:scale-110">
                       {skillInfo.icon}
                     </div>
                     
                     {/* Percentage */}
-                    <div className="text-4xl font-bold mb-4" style={{ color: currentColor }}>
+                    <div className="text-2xl font-bold mb-2 text-white transition-all duration-300">
                       {skill.level}%
                     </div>
                     
                     {/* Skill Name */}
-                    <h3 className="text-lg font-medium text-white">
+                    <h3 className="text-sm font-medium text-white transition-all duration-300">
                       {skill.name}
                     </h3>
                   </div>
