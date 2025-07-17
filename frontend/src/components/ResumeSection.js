@@ -118,13 +118,13 @@ const ResumeSection = ({ resume, currentColor }) => {
   );
 
   return (
-    <div className="min-h-screen py-12 px-8 lg:px-16">
+    <div className="min-h-screen py-12 px-8 lg:px-16 flex items-center justify-center">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-left mb-12">
+        <div className="text-center mb-12">
           {/* Introduce Text */}
-          <div className="flex items-center mb-8">
+          <div className="flex items-center justify-center mb-8">
             <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
               <span className="text-white text-sm">📄</span>
             </div>
@@ -135,7 +135,7 @@ const ResumeSection = ({ resume, currentColor }) => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             My professional <span style={{ color: currentColor }}>journey</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             A comprehensive overview of my experience and education
           </p>
         </div>
@@ -174,31 +174,33 @@ const ResumeSection = ({ resume, currentColor }) => {
           </div>
         </div>
 
-        {/* Timeline */}
-        <div className="relative mb-20 max-w-4xl mx-auto">
-          {activeTab === 'experience' ? (
-            <div>
-              {resume.experience.map((item, index) => (
-                <TimelineItem 
-                  key={index} 
-                  item={item} 
-                  index={index}
-                  isLast={index === resume.experience.length - 1}
-                />
-              ))}
-            </div>
-          ) : (
-            <div>
-              {resume.education.map((item, index) => (
-                <TimelineItem 
-                  key={index} 
-                  item={item} 
-                  index={index}
-                  isLast={index === resume.education.length - 1}
-                />
-              ))}
-            </div>
-          )}
+        {/* Timeline - Centered */}
+        <div className="relative mb-20 max-w-4xl mx-auto flex justify-center">
+          <div className="w-full max-w-3xl">
+            {activeTab === 'experience' ? (
+              <div className="space-y-8">
+                {resume.experience.map((item, index) => (
+                  <TimelineItem 
+                    key={index} 
+                    item={item} 
+                    index={index}
+                    isLast={index === resume.experience.length - 1}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-8">
+                {resume.education.map((item, index) => (
+                  <TimelineItem 
+                    key={index} 
+                    item={item} 
+                    index={index}
+                    isLast={index === resume.education.length - 1}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Certifications */}
