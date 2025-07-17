@@ -4,15 +4,30 @@ import { GraduationCap, Briefcase, Calendar, MapPin, Award, Star } from 'lucide-
 const ResumeSection = ({ resume, currentColor }) => {
   const [activeTab, setActiveTab] = useState('experience');
 
-  const TimelineItem = ({ item, isLast }) => (
+  const TimelineItem = ({ item, isLast, index }) => (
     <div className="relative flex items-start space-x-6 pb-8">
-      {/* Timeline line */}
+      {/* Timeline line with animation */}
       {!isLast && (
-        <div className="absolute left-6 top-16 w-0.5 h-full bg-gray-700"></div>
+        <div className="absolute left-6 top-16 w-0.5 bg-gray-700 overflow-hidden">
+          <div 
+            className="w-full bg-green-500 transition-all duration-1000 ease-out"
+            style={{ 
+              height: '100%',
+              backgroundColor: currentColor,
+              animation: `lineGrow 1s ease-out ${index * 0.3}s both`
+            }}
+          ></div>
+        </div>
       )}
       
-      {/* Timeline dot */}
-      <div className="relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-4 border-gray-800 z-10" style={{ backgroundColor: currentColor }}>
+      {/* Timeline dot with animation */}
+      <div 
+        className="relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-4 border-gray-800 z-10 transform transition-all duration-500 ease-out"
+        style={{ 
+          backgroundColor: currentColor,
+          animation: `fadeInUp 0.8s ease-out ${index * 0.2}s both`
+        }}
+      >
         {activeTab === 'experience' ? (
           <Briefcase size={20} className="text-white" />
         ) : (
