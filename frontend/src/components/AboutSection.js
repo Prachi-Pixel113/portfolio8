@@ -7,9 +7,9 @@ const AboutSection = ({ about, currentColor }) => {
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-left mb-12">
+        <div className="text-left mb-8">
           {/* Introduce Text */}
-          <div className="flex items-center mb-8">
+          <div className="flex items-center mb-6">
             <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
               <span className="text-white text-sm">👤</span>
             </div>
