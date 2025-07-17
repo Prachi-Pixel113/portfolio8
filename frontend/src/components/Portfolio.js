@@ -183,19 +183,35 @@ const Portfolio = () => {
         </section>
         
         <section id="skills" className="section scroll-mt-8">
-          <SkillsSection skills={mockData.about.skills} currentColor={getCurrentColor()} />
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-4xl">
+              <SkillsSection skills={mockData.about.skills} currentColor={getCurrentColor()} />
+            </div>
+          </div>
         </section>
         
         <section id="resume" className="section scroll-mt-8">
-          <ResumeSection resume={mockData.resume} currentColor={getCurrentColor()} />
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-4xl">
+              <ResumeSection resume={mockData.resume} currentColor={getCurrentColor()} />
+            </div>
+          </div>
         </section>
         
         <section id="portfolio" className="section scroll-mt-8">
-          <PortfolioSection projects={mockData.projects} currentColor={getCurrentColor()} />
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-4xl">
+              <PortfolioSection projects={mockData.projects} currentColor={getCurrentColor()} />
+            </div>
+          </div>
         </section>
         
         <section id="contact" className="section scroll-mt-8">
-          <ContactSection contact={mockData.contact} currentColor={getCurrentColor()} />
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-4xl">
+              <ContactSection contact={mockData.contact} currentColor={getCurrentColor()} />
+            </div>
+          </div>
         </section>
       </div>
     </div>
