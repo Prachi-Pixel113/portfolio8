@@ -47,7 +47,7 @@ const ServicesSection = ({ services }) => {
             <span className="text-gray-400 text-sm uppercase tracking-wider">MY SERVICES</span>
           </div>
           
-          {/* Main Heading */}
+          {/* Main Heading - Consistent with other sections */}
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             What I can <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">do for you</span>
           </h2>
