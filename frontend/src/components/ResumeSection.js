@@ -21,7 +21,18 @@ const ResumeSection = ({ resume, currentColor }) => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-700">
+      <div className="flex-1 bg-black p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-700"
+           style={{
+             transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
+           }}
+           onMouseEnter={(e) => {
+             e.currentTarget.style.borderColor = currentColor;
+             e.currentTarget.style.boxShadow = `0 0 20px ${currentColor}40`;
+           }}
+           onMouseLeave={(e) => {
+             e.currentTarget.style.borderColor = '#374151';
+             e.currentTarget.style.boxShadow = '';
+           }}>
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
