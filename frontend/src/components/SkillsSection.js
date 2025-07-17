@@ -117,7 +117,7 @@ const SkillsSection = ({ skills, currentColor }) => {
             <p className="text-gray-400">500+ cups of coffee consumed while coding</p>
           </div>
           
-          <div className="bg-gray-800 rounded-3xl p-8 text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-2">
+          <div className="bg-gray-800 rounded-3xl p-6 text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-2">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
               <Code size={28} className="text-white" />
             </div>
