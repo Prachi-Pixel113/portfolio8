@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = ({ profile, currentColor }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-8 relative">
+    <div className="min-h-[80vh] flex items-center justify-center px-8 relative">
       {/* Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 rounded-full opacity-10 animate-pulse" 
