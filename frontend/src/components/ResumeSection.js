@@ -141,7 +141,7 @@ const ResumeSection = ({ resume, currentColor }) => {
         </div>
 
         {/* Certifications */}
-        <div>
+        <div className="max-w-4xl mx-auto">
           <h3 className="text-3xl font-bold text-center mb-12 text-white">
             Certifications & <span style={{ color: currentColor }}>Awards</span>
           </h3>
