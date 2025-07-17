@@ -8,6 +8,14 @@ const AboutSection = ({ about, currentColor }) => {
         
         {/* Section Header */}
         <div className="text-left mb-8">
+          {/* About Me Text */}
+          <div className="flex items-center mb-6">
+            <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white text-sm">👤</span>
+            </div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider">ABOUT ME</span>
+          </div>
+          
           {/* Main Heading */}
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Get to know more about <span style={{ color: currentColor }}>me</span>
