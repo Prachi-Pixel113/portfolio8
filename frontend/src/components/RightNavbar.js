@@ -12,8 +12,8 @@ const RightNavbar = ({ activeSection, onSectionClick, currentColor }) => {
   ];
 
   return (
-    <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40">
-      <div className="flex flex-col space-y-4 border border-gray-700 rounded-2xl p-4 bg-gray-800/50 backdrop-blur-sm">
+    <div className="fixed right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-40">
+      <div className="flex flex-col space-y-3 md:space-y-4 border border-gray-700 rounded-full p-3 md:p-4 bg-gray-800/50 backdrop-blur-sm">
         {navItems.map((item) => {
           const Icon = item.icon;
           return (
