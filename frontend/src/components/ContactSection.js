@@ -38,7 +38,7 @@ const ContactSection = ({ contact, currentColor }) => {
           </div>
           
           {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Get In <span style={{ color: currentColor }}>Touch</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl">
