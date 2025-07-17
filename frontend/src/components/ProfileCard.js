@@ -10,7 +10,7 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-96 flex flex-col justify-center p-8">
+    <div className="fixed left-0 top-0 h-full w-80 lg:w-96 flex flex-col justify-center p-4 lg:p-8 hidden lg:flex">
       
       {/* Profile Card */}
       <div className="relative">
@@ -25,7 +25,7 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
         </div>
 
         {/* Transparent Profile Card with Border */}
-        <div className="border-2 border-gray-700 rounded-3xl p-10 bg-transparent min-h-[600px] flex flex-col justify-center">
+        <div className="border-2 border-gray-700 rounded-3xl p-8 lg:p-10 bg-transparent min-h-[500px] lg:min-h-[600px] flex flex-col justify-center">
           
           {/* Profile Picture */}
           <div className="text-center mb-8">
