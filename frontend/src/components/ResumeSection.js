@@ -149,6 +149,7 @@ const ResumeSection = ({ resume, currentColor }) => {
                 <TimelineItem 
                   key={index} 
                   item={item} 
+                  index={index}
                   isLast={index === resume.experience.length - 1}
                 />
               ))}
@@ -159,6 +160,7 @@ const ResumeSection = ({ resume, currentColor }) => {
                 <TimelineItem 
                   key={index} 
                   item={item} 
+                  index={index}
                   isLast={index === resume.education.length - 1}
                 />
               ))}
