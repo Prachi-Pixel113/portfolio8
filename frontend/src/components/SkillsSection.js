@@ -74,16 +74,18 @@ const SkillsSection = ({ skills, currentColor }) => {
             return (
               <div key={index} className="relative group">
                 {/* Oval Background - Made more oval in height */}
-                <div className="bg-black rounded-full p-6 py-10 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-700 group-hover:border-gray-500 w-48 h-64 mx-auto flex items-center justify-center group-hover:bg-opacity-90"
+                <div className="bg-black rounded-full p-6 py-10 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-2 border-gray-700 w-48 h-64 mx-auto flex items-center justify-center"
                      style={{
                        backgroundColor: 'black',
-                       transition: 'background-color 0.5s ease'
+                       transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
                      }}
                      onMouseEnter={(e) => {
-                       e.currentTarget.style.backgroundColor = currentColor;
+                       e.currentTarget.style.borderColor = currentColor;
+                       e.currentTarget.style.boxShadow = `0 0 20px ${currentColor}40`;
                      }}
                      onMouseLeave={(e) => {
-                       e.currentTarget.style.backgroundColor = 'black';
+                       e.currentTarget.style.borderColor = '#374151';
+                       e.currentTarget.style.boxShadow = '';
                      }}>
                   <div className="text-center">
                     {/* Skill Icon */}
