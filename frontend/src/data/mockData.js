@@ -23,10 +23,7 @@ export const mockData = {
     details: "When I'm not designing and coding, you can find me exploring new creative possibilities, working on personal projects, or sharing my knowledge with the design community. I believe in the power of simple, elegant solutions.",
     profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     info: [
-      { icon: Calendar, label: "Age", value: "28 Years" },
-      { icon: MapPin, label: "Location", value: "Los Angeles, CA" },
-      { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-      { icon: Mail, label: "Email", value: "hello@drake.design" }
+      // Age, email, phone, location removed as requested
     ],
     skills: [
       { name: "Framer", level: 95 },
