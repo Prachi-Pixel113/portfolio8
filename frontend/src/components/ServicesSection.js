@@ -38,7 +38,7 @@ const ServicesSection = ({ services }) => {
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header - Reduced section spacing */}
-        <div className="text-left mb-16">
+        <div className="text-left mb-12">
           {/* Introduce Text */}
           <div className="flex items-center mb-8">
             <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
