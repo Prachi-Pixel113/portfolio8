@@ -28,8 +28,8 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
         <div className="border-2 border-gray-700 rounded-3xl p-8 lg:p-10 bg-transparent min-h-[500px] lg:min-h-[600px] flex flex-col justify-center">
           
           {/* Profile Picture */}
-          <div className="text-center mb-8">
-            <div className="w-48 h-48 mx-auto mb-6 rounded-3xl overflow-hidden">
+          <div className="text-center mb-6 lg:mb-8">
+            <div className="w-40 h-40 lg:w-48 lg:h-48 mx-auto mb-4 lg:mb-6 rounded-3xl overflow-hidden">
               <img 
                 src={profile.image} 
                 alt={profile.name}
@@ -38,14 +38,14 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
             </div>
             
             {/* Name and Title */}
-            <h1 className="text-3xl font-bold text-white mb-3">{profile.name}</h1>
-            <p className="text-gray-400 text-base">{profile.title}</p>
+            <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2 lg:mb-3">{profile.name}</h1>
+            <p className="text-gray-400 text-sm lg:text-base">{profile.title}</p>
           </div>
           
           {/* Contact Info */}
-          <div className="text-center mb-8">
-            <p className="text-white text-base mb-3">{profile.email}</p>
-            <p className="text-gray-400 text-base">{profile.location}</p>
+          <div className="text-center mb-6 lg:mb-8">
+            <p className="text-white text-sm lg:text-base mb-2 lg:mb-3">{profile.email}</p>
+            <p className="text-gray-400 text-sm lg:text-base">{profile.location}</p>
           </div>
           
           {/* Social Links */}
