@@ -128,6 +128,31 @@ const Portfolio = () => {
         onSettingsChange={setSettings}
       />
 
+      {/* Mobile Header - Visible only on mobile */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-30 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 p-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-full overflow-hidden">
+              <img 
+                src={mockData.profile.image} 
+                alt={mockData.profile.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h1 className="text-white font-bold text-lg">{mockData.profile.name}</h1>
+              <p className="text-gray-400 text-sm">{mockData.profile.title}</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setShowSettings(true)}
+            className="w-8 h-8 flex items-center justify-center bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-white transition-colors"
+          >
+            <Settings size={16} />
+          </button>
+        </div>
+      </div>
+
       {/* Profile Card */}
       <ProfileCard 
         profile={mockData.profile}
