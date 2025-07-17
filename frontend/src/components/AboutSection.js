@@ -3,8 +3,8 @@ import { Download, Calendar, MapPin, Phone, Mail, Award, Code, Coffee } from 'lu
 
 const AboutSection = ({ about, currentColor }) => {
   return (
-    <div className="min-h-[80vh] py-8 px-8 lg:px-16 flex items-center">
-      <div className="max-w-full mx-auto">
+    <div className="min-h-screen py-8 px-8 lg:px-16 flex items-center justify-center">
+      <div className="max-w-4xl mx-auto">
         
         {/* Section Header */}
         <div className="text-left mb-8">
@@ -17,10 +17,10 @@ const AboutSection = ({ about, currentColor }) => {
           </div>
           
           {/* Main Heading */}
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Get to know more about <span style={{ color: currentColor }}>me</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl">
+          <p className="text-xl text-gray-400 max-w-2xl">
             What I am, what I do, and what inspires me
           </p>
         </div>
