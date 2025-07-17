@@ -37,7 +37,7 @@ const ServicesSection = ({ services }) => {
     <div className="min-h-screen py-12 px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         
-        {/* Section Header */}
+        {/* Section Header - Reduced section spacing */}
         <div className="text-left mb-16">
           {/* Introduce Text */}
           <div className="flex items-center mb-8">
