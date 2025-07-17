@@ -59,7 +59,7 @@ const ResumeSection = ({ resume, currentColor }) => {
   );
 
   return (
-    <div className="min-h-screen py-20 px-8 lg:px-16">
+    <div className="min-h-screen py-12 px-8 lg:px-16">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
