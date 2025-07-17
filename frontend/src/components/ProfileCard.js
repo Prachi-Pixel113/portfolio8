@@ -10,7 +10,7 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-80 flex flex-col justify-center p-8">
+    <div className="fixed left-0 top-0 h-full w-96 flex flex-col justify-center p-8">
       
       {/* Profile Card */}
       <div className="relative">
@@ -25,11 +25,11 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
         </div>
 
         {/* Transparent Profile Card with Border */}
-        <div className="border-2 border-gray-700 rounded-3xl p-8 bg-transparent">
+        <div className="border-2 border-gray-700 rounded-3xl p-10 bg-transparent min-h-[600px] flex flex-col justify-center">
           
           {/* Profile Picture */}
-          <div className="text-center mb-6">
-            <div className="w-40 h-40 mx-auto mb-4 rounded-3xl overflow-hidden">
+          <div className="text-center mb-8">
+            <div className="w-48 h-48 mx-auto mb-6 rounded-3xl overflow-hidden">
               <img 
                 src={profile.image} 
                 alt={profile.name}
@@ -38,18 +38,18 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
             </div>
             
             {/* Name and Title */}
-            <h1 className="text-2xl font-bold text-white mb-2">{profile.name}</h1>
-            <p className="text-gray-400 text-sm">{profile.title}</p>
+            <h1 className="text-3xl font-bold text-white mb-3">{profile.name}</h1>
+            <p className="text-gray-400 text-base">{profile.title}</p>
           </div>
           
           {/* Contact Info */}
-          <div className="text-center mb-6">
-            <p className="text-white text-sm mb-2">{profile.email}</p>
-            <p className="text-gray-400 text-sm">{profile.location}</p>
+          <div className="text-center mb-8">
+            <p className="text-white text-base mb-3">{profile.email}</p>
+            <p className="text-gray-400 text-base">{profile.location}</p>
           </div>
           
           {/* Social Links */}
-          <div className="flex justify-center space-x-3 mb-6">
+          <div className="flex justify-center space-x-4 mb-8">
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (
@@ -58,10 +58,10 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center border border-gray-600 rounded-full hover:border-gray-400 transition-all duration-200"
+                  className="w-12 h-12 flex items-center justify-center border border-gray-600 rounded-full hover:border-gray-400 transition-all duration-200"
                   title={social.name}
                 >
-                  <Icon size={16} className="text-gray-400 hover:text-white" />
+                  <Icon size={18} className="text-gray-400 hover:text-white" />
                 </a>
               );
             })}
@@ -70,10 +70,10 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick }) => {
           {/* Hire Me Button */}
           <div className="text-center">
             <button 
-              className="px-8 py-3 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg flex items-center justify-center mx-auto"
+              className="px-10 py-4 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg flex items-center justify-center mx-auto text-lg"
               style={{ backgroundColor: currentColor }}
             >
-              <Mail size={16} className="mr-2" />
+              <Mail size={18} className="mr-2" />
               HIRE ME!
             </button>
           </div>
