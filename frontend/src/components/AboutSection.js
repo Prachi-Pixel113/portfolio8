@@ -3,16 +3,25 @@ import { Download, Calendar, MapPin, Phone, Mail, Award, Code, Coffee } from 'lu
 
 const AboutSection = ({ about, currentColor }) => {
   return (
-    <div className="min-h-screen py-20 px-8 lg:px-16 bg-gray-900">
+    <div className="min-h-screen py-20 px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-left mb-16">
+          {/* Introduce Text */}
+          <div className="flex items-center mb-8">
+            <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white text-sm">👤</span>
+            </div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider">ABOUT ME</span>
+          </div>
+          
+          {/* Main Heading */}
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            About <span style={{ color: currentColor }}>Me</span>
+            Get to know more about <span style={{ color: currentColor }}>me</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Get to know more about who I am, what I do, and what inspires me
+          <p className="text-xl text-gray-400 max-w-2xl">
+            What I am, what I do, and what inspires me
           </p>
         </div>
 
