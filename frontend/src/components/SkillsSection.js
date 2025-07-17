@@ -1,26 +1,47 @@
 import React from 'react';
-import { Code, Coffee, Award, Star, Palette, Database, Globe, Smartphone, Monitor, Settings, GitBranch, Zap } from 'lucide-react';
+import { Code, Coffee, Award } from 'lucide-react';
 
 const SkillsSection = ({ skills, currentColor }) => {
-  // Skill icons mapping
-  const skillIcons = {
-    'Framer': Monitor,
-    'React/Next.js': Globe,
-    'UI/UX Design': Palette,
-    'JavaScript/TypeScript': Code,
-    'Figma': Settings,
-    'Prototyping': Smartphone,
-    'Node.js': Database,
-    'Python': Code,
-    'MongoDB': Database,
-    'Git': GitBranch,
-    'AWS': Zap,
-    'Docker': Settings
+  // Skill icons and colors mapping
+  const skillData = {
+    'Framer': { 
+      icon: '🎨', 
+      color: '#0099FF',
+      bgColor: 'bg-blue-500'
+    },
+    'React/Next.js': { 
+      icon: '⚛️', 
+      color: '#61DAFB',
+      bgColor: 'bg-blue-400'
+    },
+    'UI/UX Design': { 
+      icon: '🎨', 
+      color: '#FF6B6B',
+      bgColor: 'bg-red-400'
+    },
+    'JavaScript/TypeScript': { 
+      icon: '💛', 
+      color: '#F7DF1E',
+      bgColor: 'bg-yellow-400'
+    },
+    'Figma': { 
+      icon: '🔶', 
+      color: '#F24E1E',
+      bgColor: 'bg-orange-500'
+    },
+    'Prototyping': { 
+      icon: '📱', 
+      color: '#9C27B0',
+      bgColor: 'bg-purple-500'
+    }
   };
 
-  const getSkillIcon = (skillName) => {
-    const IconComponent = skillIcons[skillName] || Code;
-    return IconComponent;
+  const getSkillData = (skillName) => {
+    return skillData[skillName] || { 
+      icon: '⚡', 
+      color: currentColor,
+      bgColor: 'bg-gray-500'
+    };
   };
 
   return (
@@ -49,46 +70,26 @@ const SkillsSection = ({ skills, currentColor }) => {
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {skills.map((skill, index) => {
-            const IconComponent = getSkillIcon(skill.name);
+            const skillInfo = getSkillData(skill.name);
             return (
               <div key={index} className="relative group">
                 {/* Oval Background */}
-                <div className="bg-gray-800 rounded-full p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-700 group-hover:border-gray-600">
+                <div className="bg-black rounded-full p-8 py-12 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-700 group-hover:border-gray-500">
                   <div className="text-center">
                     {/* Skill Icon */}
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110" style={{ backgroundColor: currentColor }}>
-                      <IconComponent size={28} className="text-white" />
+                    <div className="text-6xl mb-6">
+                      {skillInfo.icon}
+                    </div>
+                    
+                    {/* Percentage */}
+                    <div className="text-4xl font-bold mb-4" style={{ color: currentColor }}>
+                      {skill.level}%
                     </div>
                     
                     {/* Skill Name */}
-                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-gray-200 transition-colors duration-300">
+                    <h3 className="text-lg font-medium text-white">
                       {skill.name}
                     </h3>
-                    
-                    {/* Star Rating */}
-                    <div className="flex justify-center items-center mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          size={16} 
-                          className={`mx-1 ${i < Math.floor(skill.level / 20) ? 'text-yellow-400' : 'text-gray-600'}`}
-                          fill={i < Math.floor(skill.level / 20) ? 'currentColor' : 'none'}
-                        />
-                      ))}
-                    </div>
-                    
-                    {/* Progress Bar */}
-                    <div className="w-full bg-gray-700 rounded-full h-2">
-                      <div 
-                        className="h-2 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
-                        style={{ 
-                          width: `${skill.level}%`,
-                          backgroundColor: currentColor
-                        }}
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-pulse"></div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
