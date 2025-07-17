@@ -4,7 +4,7 @@ import { Download, Calendar, MapPin, Phone, Mail, Award, Code, Coffee } from 'lu
 const AboutSection = ({ about, currentColor }) => {
   return (
     <div className="min-h-screen py-8 px-8 lg:px-16 flex items-center justify-center">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto text-center">
         
         {/* Section Header - Center Aligned */}
         <div className="text-center mb-8">
@@ -25,15 +25,15 @@ const AboutSection = ({ about, currentColor }) => {
           </p>
         </div>
 
-        {/* Main Content */}
+        {/* Main Content - Center Aligned */}
         <div className="max-w-4xl mx-auto text-center mb-20">
           <div className="space-y-8">
             <div>
-              <h3 className="text-3xl font-bold text-white mb-6">{about.title}</h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <h3 className="text-3xl font-bold text-white mb-6 text-center">{about.title}</h3>
+              <p className="text-gray-300 text-lg leading-relaxed mb-6 text-center">
                 {about.description}
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed text-center">
                 {about.details}
               </p>
             </div>
@@ -59,16 +59,16 @@ const AboutSection = ({ about, currentColor }) => {
           </div>
         </div>
 
-        {/* Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Info Cards - Center Aligned */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {about.info.map((item, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-700">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3" style={{ backgroundColor: currentColor }}>
+            <div key={index} className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-700 text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
                   <item.icon size={20} className="text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-white">{item.label}</h4>
               </div>
+              <h4 className="text-lg font-semibold text-white mb-2">{item.label}</h4>
               <p className="text-gray-300">{item.value}</p>
             </div>
           ))}
