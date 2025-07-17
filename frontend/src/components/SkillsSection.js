@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Coffee, Award } from 'lucide-react';
+import { Code, Coffee, Award, Star, Zap, Target } from 'lucide-react';
 
 const SkillsSection = ({ skills, currentColor }) => {
   return (
@@ -26,16 +26,33 @@ const SkillsSection = ({ skills, currentColor }) => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {skills.map((skill, index) => (
-            <div key={index} className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-white font-medium text-lg">{skill.name}</span>
-                <span className="text-gray-400 font-semibold">{skill.level}%</span>
+            <div key={index} className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-700 group">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 transition-all duration-300 group-hover:scale-110" style={{ backgroundColor: currentColor }}>
+                  <Star size={20} className="text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-gray-200 transition-colors duration-300">
+                    {skill.name}
+                  </h3>
+                  <div className="flex items-center mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        size={16} 
+                        className={`mr-1 ${i < Math.floor(skill.level / 20) ? 'text-yellow-400' : 'text-gray-600'}`}
+                        fill={i < Math.floor(skill.level / 20) ? 'currentColor' : 'none'}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-3">
+              
+              <div className="w-full bg-gray-700 rounded-full h-2">
                 <div 
-                  className="h-3 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
+                  className="h-2 rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
                   style={{ 
                     width: `${skill.level}%`,
                     backgroundColor: currentColor
@@ -48,21 +65,62 @@ const SkillsSection = ({ skills, currentColor }) => {
           ))}
         </div>
 
+        {/* Categories */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
+            Skill <span style={{ color: currentColor }}>Categories</span>
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
+                <Code size={24} className="text-white" />
+              </div>
+              <h4 className="text-white font-semibold mb-2">Frontend</h4>
+              <p className="text-gray-400 text-sm">Modern UI/UX Development</p>
+            </div>
+            
+            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
+                <Zap size={24} className="text-white" />
+              </div>
+              <h4 className="text-white font-semibold mb-2">Backend</h4>
+              <p className="text-gray-400 text-sm">Server & Database Management</p>
+            </div>
+            
+            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
+                <Target size={24} className="text-white" />
+              </div>
+              <h4 className="text-white font-semibold mb-2">Tools</h4>
+              <p className="text-gray-400 text-sm">Development & Design Tools</p>
+            </div>
+            
+            <div className="text-center p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-gray-600 transition-colors duration-300">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: currentColor }}>
+                <Award size={24} className="text-white" />
+              </div>
+              <h4 className="text-white font-semibold mb-2">Soft Skills</h4>
+              <p className="text-gray-400 text-sm">Communication & Leadership</p>
+            </div>
+          </div>
+        </div>
+
         {/* Fun Facts */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700">
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-1">
             <Coffee size={32} className="mx-auto mb-4 text-yellow-400" />
             <h4 className="text-xl font-bold text-white mb-2">Coffee Lover</h4>
             <p className="text-gray-400">500+ cups of coffee consumed while coding</p>
           </div>
           
-          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700">
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-1">
             <Code size={32} className="mx-auto mb-4" style={{ color: currentColor }} />
             <h4 className="text-xl font-bold text-white mb-2">Clean Code</h4>
             <p className="text-gray-400">Always writing readable and maintainable code</p>
           </div>
           
-          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700">
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-1">
             <Award size={32} className="mx-auto mb-4 text-purple-400" />
             <h4 className="text-xl font-bold text-white mb-2">Problem Solver</h4>
             <p className="text-gray-400">Love tackling complex challenges</p>
