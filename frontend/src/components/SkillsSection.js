@@ -125,7 +125,7 @@ const SkillsSection = ({ skills, currentColor }) => {
             <p className="text-gray-400">Always writing readable and maintainable code</p>
           </div>
           
-          <div className="bg-gray-800 rounded-3xl p-8 text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-2">
+          <div className="bg-gray-800 rounded-3xl p-6 text-center border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:-translate-y-2">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-500 flex items-center justify-center">
               <Award size={28} className="text-white" />
             </div>
