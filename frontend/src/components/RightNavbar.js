@@ -30,10 +30,10 @@ const RightNavbar = ({ activeSection, onSectionClick, currentColor }) => {
               }}
               title={item.label}
             >
-              <Icon size={20} />
+              <Icon size={16} className="md:w-5 md:h-5" />
               
-              {/* Tooltip */}
-              <div className="absolute right-16 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+              {/* Tooltip - Hidden on mobile for better UX */}
+              <div className="absolute right-12 md:right-16 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden md:block">
                 <div className="bg-gray-800 text-white text-sm px-2 py-1 rounded whitespace-nowrap">
                   {item.label}
                 </div>
