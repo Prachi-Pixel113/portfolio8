@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Coffee, Award, Star, Zap, Target } from 'lucide-react';
+import { Code, Coffee, Award, Star } from 'lucide-react';
 
 const SkillsSection = ({ skills, currentColor }) => {
   return (
