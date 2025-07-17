@@ -116,7 +116,7 @@ const ResumeSection = ({ resume, currentColor }) => {
         </div>
 
         {/* Timeline */}
-        <div className="relative mb-20">
+        <div className="relative mb-20 max-w-4xl mx-auto">
           {activeTab === 'experience' ? (
             <div>
               {resume.experience.map((item, index) => (
