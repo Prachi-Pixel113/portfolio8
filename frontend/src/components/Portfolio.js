@@ -3,6 +3,7 @@ import ProfileCard from './ProfileCard';
 import RightNavbar from './RightNavbar';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
+import SkillsSection from './SkillsSection';
 import ResumeSection from './ResumeSection';
 import PortfolioSection from './PortfolioSection';
 import ContactSection from './ContactSection';
