@@ -170,13 +170,13 @@ const Portfolio = () => {
       
       {/* Main Content Area - Responsive with proper margin and mobile header spacing */}
       <div className="ml-0 lg:ml-80 pt-20 lg:pt-0 transition-all duration-300">
-        {/* Combined Home and About Section Side by Side */}
+        {/* Combined Home and About Section Vertically Aligned */}
         <section id="home" className="section scroll-mt-8">
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="flex-1">
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-4xl">
               <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
             </div>
-            <div id="about" className="flex-1 scroll-mt-8">
+            <div id="about" className="w-full max-w-4xl scroll-mt-8">
               <AboutSection about={mockData.about} currentColor={getCurrentColor()} />
             </div>
           </div>
