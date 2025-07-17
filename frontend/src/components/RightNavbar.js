@@ -20,7 +20,7 @@ const RightNavbar = ({ activeSection, onSectionClick, currentColor }) => {
             <button
               key={item.id}
               onClick={() => onSectionClick(item.id)}
-              className={`w-12 h-12 flex items-center justify-center rounded-full transition-all duration-200 group relative ${
+              className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-all duration-200 group relative ${
                 activeSection === item.id
                   ? 'text-white shadow-lg'
                   : 'text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700'
