@@ -84,11 +84,27 @@ const PortfolioSection = ({ projects, currentColor }) => {
   );
 
   return (
-    <div className="min-h-screen py-20 px-8 lg:px-16 bg-black">
+    <div className="min-h-screen py-20 px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-          My <span style={{ color: currentColor }}>Portfolio</span>
-        </h2>
+        
+        {/* Section Header */}
+        <div className="text-left mb-16">
+          {/* Introduce Text */}
+          <div className="flex items-center mb-8">
+            <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+              <span className="text-white text-sm">💼</span>
+            </div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider">MY PORTFOLIO</span>
+          </div>
+          
+          {/* Main Heading */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            My creative <span style={{ color: currentColor }}>work</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl">
+            A showcase of my best projects and achievements
+          </p>
+        </div>
 
         {/* Filter Buttons */}
         <div className="flex justify-center mb-12">
