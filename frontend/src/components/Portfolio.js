@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Settings } from 'lucide-react';
 import ProfileCard from './ProfileCard';
 import RightNavbar from './RightNavbar';
 import HeroSection from './HeroSection';
