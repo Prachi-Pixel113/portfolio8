@@ -1,10 +1,11 @@
 import React from 'react';
-import { Home, User, FileText, Briefcase, Settings, Mail } from 'lucide-react';
+import { Home, User, FileText, Briefcase, Settings, Mail, Code } from 'lucide-react';
 
 const RightNavbar = ({ activeSection, onSectionClick, currentColor }) => {
   const navItems = [
     { id: 'home', icon: Home, label: 'Home' },
     { id: 'about', icon: User, label: 'About' },
+    { id: 'skills', icon: Code, label: 'Skills' },
     { id: 'resume', icon: FileText, label: 'Resume' },
     { id: 'portfolio', icon: Briefcase, label: 'Portfolio' },
     { id: 'contact', icon: Mail, label: 'Contact' },
