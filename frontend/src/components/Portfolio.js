@@ -142,8 +142,8 @@ const Portfolio = () => {
         currentColor={getCurrentColor()}
       />
       
-      {/* Main Content Area */}
-      <div className="ml-80">
+      {/* Main Content Area - Responsive */}
+      <div className="ml-0 lg:ml-80 transition-all duration-300">
         <section id="home" className="section scroll-mt-8">
           <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
         </section>
