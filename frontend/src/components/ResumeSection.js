@@ -4,6 +4,39 @@ import { GraduationCap, Briefcase, Calendar, MapPin, Award, Star } from 'lucide-
 const ResumeSection = ({ resume, currentColor }) => {
   const [activeTab, setActiveTab] = useState('experience');
 
+  // Add CSS animations
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes lineGrow {
+        0% {
+          height: 0;
+          transform: translateY(-100%);
+        }
+        100% {
+          height: 100%;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const TimelineItem = ({ item, isLast, index }) => (
     <div className="relative flex items-start space-x-6 pb-8">
       {/* Timeline line with animation */}
