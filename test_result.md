@@ -118,6 +118,42 @@ backend:
         comment: "This task is frontend only, no backend changes required"
 
 frontend:
+  - task: "Increase profile card height in mobile responsive view"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/MobileProfileCard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Increased mobile profile card height: Changed py-6 to py-10, profile image from w-24 h-24 to w-32 h-32, increased spacing between elements, made text larger, social icons larger, hire button bigger"
+
+  - task: "Remove sliding space in contact section and all sections for mobile responsive"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Portfolio.js, /app/frontend/src/components/ContactSection.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Removed horizontal padding on mobile: Portfolio.js changed px-4 md:px-0 to px-0 md:px-0 for all sections, ContactSection.js changed px-8 lg:px-16 to px-0 lg:px-16"
+
+  - task: "Make contact form bigger for mobile responsive"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ContactSection.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Increased contact form size for mobile: Input fields py-3 to py-5, textarea rows from 6 to 8, submit button py-4 to py-6, added text-base class for larger font, form container padding responsive p-6 md:p-8"
+
   - task: "Make ProfileCard visible and accessible on mobile devices"
     implemented: true
     working: true
