@@ -121,7 +121,7 @@ const ResumeSection = ({ resume, currentColor }) => {
     return (
       <div 
         ref={(el) => itemRefs.current[index] = el}
-        className="relative flex items-start space-x-4 md:space-x-6 pb-8"
+        className="relative flex items-start space-x-4 md:space-x-8 pb-8 md:pb-12"
       >
         {/* Timeline line with scroll-triggered animation */}
         {!isLast && (
@@ -138,16 +138,16 @@ const ResumeSection = ({ resume, currentColor }) => {
         
         {/* Timeline dot with enhanced animation */}
         <div 
-          className={`timeline-dot relative flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-4 border-gray-800 z-10 ${isVisible ? 'animate' : ''}`}
+          className={`timeline-dot relative flex-shrink-0 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center border-4 border-gray-800 z-10 ${isVisible ? 'animate' : ''}`}
           style={{ 
             backgroundColor: currentColor,
             animationDelay: `${index * 0.1}s`
           }}
         >
           {activeTab === 'experience' ? (
-            <Briefcase size={16} className="text-white md:w-5 md:h-5" />
+            <Briefcase size={16} className="text-white md:w-6 md:h-6" />
           ) : (
-            <GraduationCap size={16} className="text-white md:w-5 md:h-5" />
+            <GraduationCap size={16} className="text-white md:w-6 md:h-6" />
           )}
           
           {/* Pulsing ring effect */}
@@ -163,7 +163,7 @@ const ResumeSection = ({ resume, currentColor }) => {
 
         {/* Content with slide-in animation - Always visible */}
         <div 
-          className={`flex-1 bg-black p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-700 timeline-content ${isVisible ? 'animate' : ''}`}
+          className={`flex-1 bg-black p-4 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-700 timeline-content ${isVisible ? 'animate' : ''}`}
           style={{
             animationDelay: `${index * 0.15}s`
           }}
