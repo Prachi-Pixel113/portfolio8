@@ -209,7 +209,7 @@ const ContactSection = ({ contact, currentColor }) => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 py-4 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+                className="w-full flex items-center justify-center space-x-2 py-6 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg text-base"
                 style={{ 
                   backgroundColor: currentColor,
                   ':hover': { filter: 'brightness(1.1)' }
