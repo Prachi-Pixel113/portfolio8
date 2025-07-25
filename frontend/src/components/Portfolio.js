@@ -146,6 +146,7 @@ const Portfolio = () => {
       <MobileProfileCard 
         profile={mockData.profile}
         currentColor={getCurrentColor()}
+        onSettingsClick={() => setShowSettings(true)}
       />
 
       {/* Desktop Settings Button */}
