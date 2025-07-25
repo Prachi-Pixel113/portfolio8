@@ -36,6 +36,20 @@ const Portfolio = () => {
     setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
+  // Lock body scroll when mobile profile drawer is open
+  useEffect(() => {
+    if (showMobileProfile) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showMobileProfile]);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'resume', 'portfolio', 'contact'];
