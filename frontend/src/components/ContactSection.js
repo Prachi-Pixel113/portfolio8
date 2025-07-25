@@ -46,44 +46,44 @@ const ContactSection = ({ contact, currentColor }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Information - Reduced width */}
-          <div className="lg:col-span-1 space-y-8">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
-                  <Mail size={20} className="text-white" />
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Contact Information - Further reduced width */}
+          <div className="lg:col-span-1 space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
+                  <Mail size={18} className="text-white" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Email</h4>
-                  <p className="text-gray-400">{contact.email}</p>
+                  <h4 className="text-white font-semibold text-sm">Email</h4>
+                  <p className="text-gray-400 text-sm">{contact.email}</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
-                  <Phone size={20} className="text-white" />
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
+                  <Phone size={18} className="text-white" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Phone</h4>
-                  <p className="text-gray-400">{contact.phone}</p>
+                  <h4 className="text-white font-semibold text-sm">Phone</h4>
+                  <p className="text-gray-400 text-sm">{contact.phone}</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
-                  <MapPin size={20} className="text-white" />
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
+                  <MapPin size={18} className="text-white" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Location</h4>
-                  <p className="text-gray-400">{contact.location}</p>
+                  <h4 className="text-white font-semibold text-sm">Location</h4>
+                  <p className="text-gray-400 text-sm">{contact.location}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Contact Form - Increased width */}
-          <div className="lg:col-span-2 bg-gray-900 p-6 md:p-10 rounded-xl shadow-lg border border-gray-800">
+          {/* Contact Form - Maximum width with reduced height */}
+          <div className="lg:col-span-3 bg-gray-900 p-6 md:p-8 rounded-xl shadow-lg border border-gray-800">
             <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
               <MessageCircle size={32} className="mr-4" style={{ color: currentColor }} />
               Send Message
