@@ -17,7 +17,6 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoading, setIsLoading] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
-  const [showMobileProfile, setShowMobileProfile] = useState(false);
   const [settings, setSettings] = useState({
     colorTheme: 'green',
     backgroundStyle: 'curves',
