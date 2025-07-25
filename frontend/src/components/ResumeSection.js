@@ -270,9 +270,9 @@ const ResumeSection = ({ resume, currentColor }) => {
           </div>
         </div>
 
-        {/* Timeline - Centered */}
-        <div className="relative mb-20 max-w-4xl mx-auto flex justify-center">
-          <div className="w-full max-w-3xl">
+        {/* Timeline - Mobile-friendly layout */}
+        <div className="relative mb-20">
+          <div className="w-full px-0 md:px-8">
             {activeTab === 'experience' ? (
               <div className="space-y-8">
                 {resume.experience.map((item, index) => (
