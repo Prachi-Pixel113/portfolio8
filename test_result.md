@@ -307,7 +307,7 @@ metadata:
 test_plan:
   current_focus:
     - "Add settings button to mobile profile card"
-    - "Fix education and experience cards visibility on desktop"
+    - "Redesign contact section layout and increase form width on desktop"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
