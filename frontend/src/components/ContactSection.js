@@ -84,8 +84,8 @@ const ContactSection = ({ contact, currentColor }) => {
 
           {/* Contact Form - Increased width */}
           <div className="lg:col-span-2 bg-gray-900 p-6 md:p-10 rounded-xl shadow-lg border border-gray-800">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <MessageCircle size={28} className="mr-3" style={{ color: currentColor }} />
+            <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
+              <MessageCircle size={32} className="mr-4" style={{ color: currentColor }} />
               Send Message
             </h3>
 
