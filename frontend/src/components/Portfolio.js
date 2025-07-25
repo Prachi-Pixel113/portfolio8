@@ -175,7 +175,7 @@ const Portfolio = () => {
       />
       
       {/* Main Content Area - Responsive with mobile spacing */}
-      <div className="md:ml-80 px-4 md:px-0 pt-32 md:pt-0 transition-all duration-300">
+      <div className="md:ml-80 px-0 md:px-0 pt-32 md:pt-0 transition-all duration-300">
         {/* Combined Home and About Section Vertically Aligned */}
         <section id="home" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
