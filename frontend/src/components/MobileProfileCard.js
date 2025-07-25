@@ -61,10 +61,10 @@ const MobileProfileCard = ({ profile, currentColor }) => {
         <div className="text-center">
           <a
             href={`mailto:${profile.email}`}
-            className="mobile-button inline-flex items-center px-6 py-2 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg text-sm"
+            className="mobile-button inline-flex items-center px-8 py-3 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg text-base"
             style={{ backgroundColor: currentColor }}
           >
-            <Mail size={16} className="mr-2" />
+            <Mail size={18} className="mr-2" />
             HIRE ME!
           </a>
         </div>
