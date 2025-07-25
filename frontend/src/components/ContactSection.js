@@ -195,8 +195,8 @@ const ContactSection = ({ contact, currentColor }) => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white resize-none"
+                  rows={8}
+                  className="w-full px-4 py-5 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white resize-none text-base"
                   style={{ 
                     ':focus': { borderColor: currentColor },
                     borderColor: formData.message ? currentColor : '#374151'
