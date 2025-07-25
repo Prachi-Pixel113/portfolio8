@@ -89,10 +89,10 @@ const ContactSection = ({ contact, currentColor }) => {
               Send Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                  <label className="block text-gray-300 text-sm font-medium mb-3">
                     Name *
                   </label>
                   <input
@@ -101,7 +101,7 @@ const ContactSection = ({ contact, currentColor }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-5 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white text-base"
+                    className="w-full px-6 py-6 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white text-base"
                     style={{ 
                       ':focus': { borderColor: currentColor },
                       borderColor: formData.name ? currentColor : '#374151'
@@ -113,7 +113,7 @@ const ContactSection = ({ contact, currentColor }) => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                  <label className="block text-gray-300 text-sm font-medium mb-3">
                     Email *
                   </label>
                   <input
@@ -122,7 +122,7 @@ const ContactSection = ({ contact, currentColor }) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-5 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white text-base"
+                    className="w-full px-6 py-6 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white text-base"
                     style={{ 
                       ':focus': { borderColor: currentColor },
                       borderColor: formData.email ? currentColor : '#374151'
@@ -135,7 +135,7 @@ const ContactSection = ({ contact, currentColor }) => {
               </div>
 
               <div>
-                <label className="block text-gray-300 text-sm font-medium mb-2">
+                <label className="block text-gray-300 text-sm font-medium mb-3">
                   Subject *
                 </label>
                 <input
@@ -144,7 +144,7 @@ const ContactSection = ({ contact, currentColor }) => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-5 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white text-base"
+                  className="w-full px-6 py-6 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white text-base"
                   style={{ 
                     ':focus': { borderColor: currentColor },
                     borderColor: formData.subject ? currentColor : '#374151'
@@ -156,7 +156,7 @@ const ContactSection = ({ contact, currentColor }) => {
               </div>
 
               <div>
-                <label className="block text-gray-300 text-sm font-medium mb-2">
+                <label className="block text-gray-300 text-sm font-medium mb-3">
                   Message *
                 </label>
                 <textarea
@@ -164,8 +164,8 @@ const ContactSection = ({ contact, currentColor }) => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={8}
-                  className="w-full px-4 py-5 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white resize-none text-base"
+                  rows={10}
+                  className="w-full px-6 py-6 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white resize-none text-base"
                   style={{ 
                     ':focus': { borderColor: currentColor },
                     borderColor: formData.message ? currentColor : '#374151'
@@ -178,7 +178,7 @@ const ContactSection = ({ contact, currentColor }) => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 py-6 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg text-base"
+                className="w-full xl:w-auto xl:px-16 flex items-center justify-center space-x-3 py-6 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg text-lg"
                 style={{ 
                   backgroundColor: currentColor,
                   ':hover': { filter: 'brightness(1.1)' }
@@ -186,7 +186,7 @@ const ContactSection = ({ contact, currentColor }) => {
                 onMouseEnter={(e) => e.target.style.filter = 'brightness(1.1)'}
                 onMouseLeave={(e) => e.target.style.filter = 'brightness(1)'}
               >
-                <Send size={20} />
+                <Send size={22} />
                 <span>Send Message</span>
               </button>
             </form>
