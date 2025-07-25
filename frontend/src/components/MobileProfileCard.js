@@ -31,15 +31,15 @@ const MobileProfileCard = ({ profile, currentColor }) => {
         <div className="mb-6">
           <a 
             href={`mailto:${profile.email}`}
-            className="mobile-text text-white text-sm hover:text-gray-300 transition-colors"
+            className="mobile-text text-white text-base hover:text-gray-300 transition-colors"
           >
             {profile.email}
           </a>
-          <p className="text-gray-500 text-xs mt-1">Based in {profile.location}</p>
+          <p className="text-gray-500 text-sm mt-1">Based in {profile.location}</p>
         </div>
         
         {/* Social Links */}
-        <div className="mobile-social-links flex justify-center space-x-3 mb-4">
+        <div className="mobile-social-links flex justify-center space-x-4 mb-6">
           {socialLinks.map((social) => {
             const Icon = social.icon;
             return (
