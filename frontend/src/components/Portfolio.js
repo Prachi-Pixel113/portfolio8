@@ -154,29 +154,31 @@ const Portfolio = () => {
         </button>
       </div>
 
-      {/* Profile Card */}
-      <ProfileCard 
-        profile={mockData.profile}
-        currentColor={getCurrentColor()}
-        onSettingsClick={() => setShowSettings(true)}
-      />
+      {/* Profile Card - Desktop Only */}
+      <div className="hidden md:block">
+        <ProfileCard 
+          profile={mockData.profile}
+          currentColor={getCurrentColor()}
+          onSettingsClick={() => setShowSettings(true)}
+        />
+      </div>
 
-      {/* Right Navigation */}
+      {/* Right Navigation - Desktop Only */}
       <RightNavbar
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
         currentColor={getCurrentColor()}
       />
       
-      {/* Main Content Area - Responsive with proper margin and mobile header spacing */}
-      <div className="ml-0 lg:ml-80 pt-20 lg:pt-0 transition-all duration-300">
+      {/* Main Content Area - Responsive with mobile spacing */}
+      <div className="md:ml-80 px-4 md:px-0 pt-32 md:pt-0 transition-all duration-300">
         {/* Combined Home and About Section Vertically Aligned */}
         <section id="home" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-4xl px-4 md:px-0">
               <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
             </div>
-            <div id="about" className="w-full max-w-4xl scroll-mt-8">
+            <div id="about" className="w-full max-w-4xl scroll-mt-8 px-4 md:px-0">
               <AboutSection about={mockData.about} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -184,7 +186,7 @@ const Portfolio = () => {
         
         <section id="skills" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-4xl px-4 md:px-0">
               <SkillsSection skills={mockData.about.skills} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -192,7 +194,7 @@ const Portfolio = () => {
         
         <section id="resume" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-4xl px-4 md:px-0">
               <ResumeSection resume={mockData.resume} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -200,7 +202,7 @@ const Portfolio = () => {
         
         <section id="portfolio" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-4xl px-4 md:px-0">
               <PortfolioSection projects={mockData.projects} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -208,7 +210,7 @@ const Portfolio = () => {
         
         <section id="contact" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-4xl px-4 md:px-0">
               <ContactSection contact={mockData.contact} currentColor={getCurrentColor()} />
             </div>
           </div>
