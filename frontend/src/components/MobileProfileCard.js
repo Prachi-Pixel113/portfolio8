@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Github, Linkedin, Instagram, Mail } from 'lucide-react';
+import { Twitter, Github, Linkedin, Instagram, Mail, Settings } from 'lucide-react';
 
 const MobileProfileCard = ({ profile, currentColor }) => {
   const socialLinks = [
