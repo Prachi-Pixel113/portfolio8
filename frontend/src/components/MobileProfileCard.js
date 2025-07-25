@@ -23,12 +23,12 @@ const MobileProfileCard = ({ profile, currentColor }) => {
           </div>
           
           {/* Name and Title */}
-          <h1 className="mobile-title text-xl font-bold text-white mb-1">{profile.name}</h1>
-          <p className="mobile-text text-gray-400 text-sm">{profile.title}</p>
+          <h1 className="mobile-title text-2xl font-bold text-white mb-2">{profile.name}</h1>
+          <p className="mobile-text text-gray-400 text-base">{profile.title}</p>
         </div>
         
         {/* Contact Info */}
-        <div className="mb-4">
+        <div className="mb-6">
           <a 
             href={`mailto:${profile.email}`}
             className="mobile-text text-white text-sm hover:text-gray-300 transition-colors"
