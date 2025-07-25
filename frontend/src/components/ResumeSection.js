@@ -270,11 +270,11 @@ const ResumeSection = ({ resume, currentColor }) => {
           </div>
         </div>
 
-        {/* Timeline - Mobile-friendly layout */}
+        {/* Timeline - Desktop and mobile optimized layout */}
         <div className="relative mb-20">
-          <div className="w-full px-0 md:px-8">
+          <div className="w-full">
             {activeTab === 'experience' ? (
-              <div className="space-y-8">
+              <div className="space-y-8 md:space-y-12">
                 {resume.experience.map((item, index) => (
                   <TimelineItem 
                     key={index} 
@@ -285,7 +285,7 @@ const ResumeSection = ({ resume, currentColor }) => {
                 ))}
               </div>
             ) : (
-              <div className="space-y-8">
+              <div className="space-y-8 md:space-y-12">
                 {resume.education.map((item, index) => (
                   <TimelineItem 
                     key={index} 
