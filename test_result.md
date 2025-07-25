@@ -326,7 +326,7 @@ metadata:
 test_plan:
   current_focus:
     - "Add settings button to mobile profile card"
-    - "Create minimalist contact section with form-only design"
+    - "Improve About Me section mobile responsive alignment"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
