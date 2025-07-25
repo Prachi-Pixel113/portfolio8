@@ -114,7 +114,7 @@ const ContactSection = ({ contact, currentColor }) => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800">
+          <div className="bg-gray-900 p-6 md:p-8 rounded-xl shadow-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
               <MessageCircle size={28} className="mr-3" style={{ color: currentColor }} />
               Send Message
@@ -132,7 +132,7 @@ const ContactSection = ({ contact, currentColor }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white"
+                    className="w-full px-4 py-5 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none text-white text-base"
                     style={{ 
                       ':focus': { borderColor: currentColor },
                       borderColor: formData.name ? currentColor : '#374151'
