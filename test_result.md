@@ -294,7 +294,7 @@ metadata:
 test_plan:
   current_focus:
     - "Add settings button to mobile profile card"
-    - "Fix timeline animation for mobile devices in education/experience section"
+    - "Fix education and experience cards visibility on desktop"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
