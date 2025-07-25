@@ -193,7 +193,29 @@ frontend:
         agent: "testing"
         comment: "✅ TESTED SUCCESSFULLY: All sections (home, about, skills, resume, portfolio, contact) extend edge-to-edge on mobile with no horizontal padding. Content starts at x: 0px and extends to full viewport width (375px) on mobile devices. No sliding space or side margins detected on mobile viewports."
 
-  - task: "Make contact form bigger for mobile responsive"
+  - task: "Add settings button to mobile profile card"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/MobileProfileCard.js, /app/frontend/src/components/Portfolio.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Added settings functionality to mobile profile card: 1) Imported Settings icon from lucide-react, 2) Added onSettingsClick prop to MobileProfileCard component, 3) Added Settings button below Hire Me button with consistent styling (gray background, border, hover effects), 4) Updated Portfolio.js to pass setShowSettings handler to MobileProfileCard. Settings button now accessible on mobile devices to match desktop functionality."
+
+  - task: "Fix timeline animation for mobile devices in education/experience section"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ResumeSection.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Fixed timeline line animations on mobile devices: Removed media query restrictions that disabled animations on mobile (min-width: 768px). Timeline animations now work on all screen sizes: 1) Timeline line grows from top to bottom (lineGrow animation), 2) Timeline dots have pulsing glow effects, 3) Content animations are enabled on mobile. All animations now trigger properly on mobile devices when scrolling through education/experience sections."
     implemented: true
     working: true
     file: "/app/frontend/src/components/ContactSection.js"
