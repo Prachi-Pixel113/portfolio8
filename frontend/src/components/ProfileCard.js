@@ -150,13 +150,14 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick, isMobile = false 
           
           {/* Hire Me Button */}
           <div className="text-center">
-            <button 
+            <a
+              href={`mailto:${profile.email}`}
               className="px-10 py-4 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg flex items-center justify-center mx-auto text-lg"
               style={{ backgroundColor: currentColor }}
             >
               <Mail size={18} className="mr-2" />
               HIRE ME!
-            </button>
+            </a>
           </div>
         </div>
       </div>
