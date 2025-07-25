@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "in mobile responsive increase profile card height in the real height and in mobile responsive in contact section and all section remove siding space and in contact form make from bigger to improve this for mobile responsive"
+user_problem_statement: "my resume section ko align with my skills section and add a line for animation in icons of experience block when we move from top to down"
 
 backend:
   - task: "No backend changes needed for mobile responsive navigation"
