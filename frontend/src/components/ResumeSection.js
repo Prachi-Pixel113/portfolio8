@@ -195,14 +195,14 @@ const ResumeSection = ({ resume, currentColor }) => {
           {item.achievements && (
             <div className="space-y-3">
               <div className="flex items-center">
-                <Star size={16} className="mr-2" style={{ color: currentColor }} />
-                <h4 className="text-sm font-semibold text-white">Key Achievements</h4>
+                <Star size={14} className="mr-2 md:w-4 md:h-4" style={{ color: currentColor }} />
+                <h4 className="text-xs md:text-sm font-semibold text-white">Key Achievements</h4>
               </div>
               <div className="grid grid-cols-1 gap-2">
                 {item.achievements.map((achievement, achievementIndex) => (
                   <div key={achievementIndex} className="flex items-start">
-                    <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: currentColor }}></div>
-                    <span className="text-sm text-gray-300">{achievement}</span>
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: currentColor }}></div>
+                    <span className="text-xs md:text-sm text-gray-300">{achievement}</span>
                   </div>
                 ))}
               </div>
