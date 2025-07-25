@@ -115,50 +115,67 @@ const ResumeSection = ({ resume, currentColor }) => {
     itemRefs.current = [];
   }, [activeTab]);
 
-  const TimelineItem = ({ item, isLast, index }) => (
-    <div className="relative flex items-start space-x-6 pb-8">
-      {/* Timeline line with animation */}
-      {!isLast && (
-        <div className="absolute left-6 top-16 w-0.5 bg-gray-700 overflow-hidden">
+  const TimelineItem = ({ item, isLast, index }) => {
+    const isVisible = visibleItems.has(index);
+    
+    return (
+      <div 
+        ref={(el) => itemRefs.current[index] = el}
+        className="relative flex items-start space-x-6 pb-8"
+      >
+        {/* Timeline line with scroll-triggered animation */}
+        {!isLast && (
+          <div className="absolute left-6 top-16 w-0.5 h-full bg-gray-700 overflow-hidden">
+            <div 
+              className={`timeline-line w-full bg-gradient-to-b from-transparent via-current to-current ${isVisible ? 'animate' : ''}`}
+              style={{ 
+                color: currentColor,
+                animationDelay: `${index * 0.2}s`
+              }}
+            ></div>
+          </div>
+        )}
+        
+        {/* Timeline dot with enhanced animation */}
+        <div 
+          className={`timeline-dot relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center border-4 border-gray-800 z-10 ${isVisible ? 'animate' : ''}`}
+          style={{ 
+            backgroundColor: currentColor,
+            animationDelay: `${index * 0.1}s`
+          }}
+        >
+          {activeTab === 'experience' ? (
+            <Briefcase size={20} className="text-white" />
+          ) : (
+            <GraduationCap size={20} className="text-white" />
+          )}
+          
+          {/* Pulsing ring effect */}
           <div 
-            className="w-full bg-green-500 transition-all duration-1000 ease-out"
+            className={`absolute inset-0 rounded-full border-2 ${isVisible ? 'animate-ping' : ''}`}
             style={{ 
-              height: '100%',
-              backgroundColor: currentColor,
-              animation: `lineGrow 1s ease-out ${index * 0.3}s both`
+              borderColor: currentColor,
+              animationDuration: '2s',
+              animationDelay: `${index * 0.3}s`
             }}
           ></div>
         </div>
-      )}
-      
-      {/* Timeline dot with animation */}
-      <div 
-        className="relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-4 border-gray-800 z-10 transform transition-all duration-500 ease-out"
-        style={{ 
-          backgroundColor: currentColor,
-          animation: `fadeInUp 0.8s ease-out ${index * 0.2}s both`
-        }}
-      >
-        {activeTab === 'experience' ? (
-          <Briefcase size={20} className="text-white" />
-        ) : (
-          <GraduationCap size={20} className="text-white" />
-        )}
-      </div>
 
-      {/* Content */}
-      <div className="flex-1 bg-black p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-700"
-           style={{
-             transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
-           }}
-           onMouseEnter={(e) => {
-             e.currentTarget.style.borderColor = currentColor;
-             e.currentTarget.style.boxShadow = `0 0 20px ${currentColor}40`;
-           }}
-           onMouseLeave={(e) => {
-             e.currentTarget.style.borderColor = '#374151';
-             e.currentTarget.style.boxShadow = '';
-           }}>
+        {/* Content with slide-in animation */}
+        <div 
+          className={`timeline-content flex-1 bg-black p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-700 ${isVisible ? 'animate' : ''}`}
+          style={{
+            animationDelay: `${index * 0.15}s`
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = currentColor;
+            e.currentTarget.style.boxShadow = `0 0 20px ${currentColor}40`;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = '#374151';
+            e.currentTarget.style.boxShadow = '';
+          }}
+        >
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
