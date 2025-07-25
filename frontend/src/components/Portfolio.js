@@ -179,10 +179,10 @@ const Portfolio = () => {
         {/* Combined Home and About Section Vertically Aligned */}
         <section id="home" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl px-4 md:px-0">
+            <div className="w-full max-w-4xl px-0 md:px-0">
               <HeroSection profile={mockData.profile} currentColor={getCurrentColor()} />
             </div>
-            <div id="about" className="w-full max-w-4xl scroll-mt-8 px-4 md:px-0">
+            <div id="about" className="w-full max-w-4xl scroll-mt-8 px-0 md:px-0">
               <AboutSection about={mockData.about} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -190,7 +190,7 @@ const Portfolio = () => {
         
         <section id="skills" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl px-4 md:px-0">
+            <div className="w-full max-w-4xl px-0 md:px-0">
               <SkillsSection skills={mockData.about.skills} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -198,7 +198,7 @@ const Portfolio = () => {
         
         <section id="resume" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl px-4 md:px-0">
+            <div className="w-full max-w-4xl px-0 md:px-0">
               <ResumeSection resume={mockData.resume} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -206,7 +206,7 @@ const Portfolio = () => {
         
         <section id="portfolio" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl px-4 md:px-0">
+            <div className="w-full max-w-4xl px-0 md:px-0">
               <PortfolioSection projects={mockData.projects} currentColor={getCurrentColor()} />
             </div>
           </div>
@@ -214,7 +214,7 @@ const Portfolio = () => {
         
         <section id="contact" className="section scroll-mt-8">
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl px-4 md:px-0">
+            <div className="w-full max-w-4xl px-0 md:px-0">
               <ContactSection contact={mockData.contact} currentColor={getCurrentColor()} />
             </div>
           </div>
