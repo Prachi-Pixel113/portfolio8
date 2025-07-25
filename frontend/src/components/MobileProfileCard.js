@@ -58,7 +58,7 @@ const MobileProfileCard = ({ profile, currentColor, onSettingsClick }) => {
         </div>
         
         {/* Hire Me Button */}
-        <div className="text-center">
+        <div className="text-center mb-6">
           <a
             href={`mailto:${profile.email}`}
             className="mobile-button inline-flex items-center px-10 py-4 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg text-lg"
@@ -67,6 +67,17 @@ const MobileProfileCard = ({ profile, currentColor, onSettingsClick }) => {
             <Mail size={20} className="mr-2" />
             HIRE ME!
           </a>
+        </div>
+
+        {/* Settings Button */}
+        <div className="text-center">
+          <button
+            onClick={onSettingsClick}
+            className="px-6 py-2 bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-white transition-colors flex items-center justify-center mx-auto"
+          >
+            <Settings size={16} className="mr-2" />
+            Settings
+          </button>
         </div>
       </div>
     </div>
