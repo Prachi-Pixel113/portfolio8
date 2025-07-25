@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "my resume section ko align with my skills section and add a line for animation in icons of experience block when we move from top to down"
+user_problem_statement: "in mobile responsive content of education and experience is not visible make it visible"
 
 backend:
   - task: "No backend changes needed for mobile responsive navigation"
