@@ -283,7 +283,8 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Increase profile card height in mobile responsive view"
+    - "Add settings button to mobile profile card"
+    - "Fix timeline animation for mobile devices in education/experience section"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
