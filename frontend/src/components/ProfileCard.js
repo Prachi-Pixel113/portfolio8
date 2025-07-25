@@ -30,8 +30,13 @@ const ProfileCard = ({ profile, currentColor, onSettingsClick, isMobile = false 
         
         {/* Contact Info */}
         <div className="text-center mb-6">
-          <p className="text-white text-base mb-2">{profile.email}</p>
-          <p className="text-gray-400 text-base">{profile.location}</p>
+          <a 
+            href={`mailto:${profile.email}`}
+            className="text-white text-base mb-2 hover:text-gray-300 transition-colors block"
+          >
+            {profile.email}
+          </a>
+          <p className="text-gray-500 text-sm">Based in {profile.location}</p>
         </div>
         
         {/* Social Links */}
