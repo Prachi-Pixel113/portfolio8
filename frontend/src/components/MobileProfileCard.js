@@ -28,7 +28,7 @@ const MobileProfileCard = ({ profile, currentColor }) => {
         </div>
         
         {/* Contact Info */}
-        <div className="mb-6">
+        <div className="mb-8">
           <a 
             href={`mailto:${profile.email}`}
             className="mobile-text text-white text-base hover:text-gray-300 transition-colors"
