@@ -206,7 +206,10 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Increase profile card height in mobile responsive view"
+    - "Remove sliding space in contact section and all sections for mobile responsive"
+    - "Make contact form bigger for mobile responsive"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
