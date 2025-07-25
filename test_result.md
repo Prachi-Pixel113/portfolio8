@@ -162,11 +162,11 @@ frontend:
 
   - task: "Increase profile card height in mobile responsive view"
     implemented: true
-    working: true
+    working: "NA"
     file: "/app/frontend/src/components/MobileProfileCard.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: "NA"
         agent: "main"
@@ -174,6 +174,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ TESTED SUCCESSFULLY: Mobile profile card height significantly increased with py-10 padding (426.59px height). Profile image correctly sized at 128x128px (w-32 h-32). All elements properly spaced with larger text, social icons, and hire button. Tested on multiple viewports (375px, 414px) - all working correctly. Mobile profile card properly hidden on desktop (>768px) and visible on mobile devices (≤768px)."
+      - working: "NA"
+        agent: "main"
+        comment: "FURTHER HEIGHT INCREASE: Changed py-10 to py-16 (64px top/bottom padding = 128px total), profile image from w-32 h-32 to w-40 h-40 (160px), increased text sizes (text-3xl for name, text-lg for title and email), larger social icons (w-12 h-12 with size-20 icons), bigger hire button (px-10 py-4 text-lg), increased all margin spacings (mb-8 instead of mb-6, space-x-6 for social links). This creates a significantly taller and more prominent mobile profile card."
 
   - task: "Remove sliding space in contact section and all sections for mobile responsive"
     implemented: true
