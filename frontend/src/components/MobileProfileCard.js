@@ -1,7 +1,7 @@
 import React from 'react';
 import { Twitter, Github, Linkedin, Instagram, Mail, Settings } from 'lucide-react';
 
-const MobileProfileCard = ({ profile, currentColor }) => {
+const MobileProfileCard = ({ profile, currentColor, onSettingsClick }) => {
   const socialLinks = [
     { name: 'Twitter', url: profile.social.twitter, icon: Twitter },
     { name: 'GitHub', url: profile.social.github, icon: Github },
