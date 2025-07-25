@@ -34,7 +34,7 @@ const MobileNavbar = ({ activeSection, onSectionClick, currentColor }) => {
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 shadow-lg">
+          <div className="mobile-nav-dropdown absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 shadow-lg">
             <div className="px-4 py-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -42,7 +42,7 @@ const MobileNavbar = ({ activeSection, onSectionClick, currentColor }) => {
                   <button
                     key={item.id}
                     onClick={() => handleSectionClick(item.id)}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                    className={`mobile-nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                       activeSection === item.id
                         ? 'text-white shadow-lg'
                         : 'text-gray-400 hover:text-white hover:bg-gray-800'
@@ -52,7 +52,7 @@ const MobileNavbar = ({ activeSection, onSectionClick, currentColor }) => {
                     }}
                   >
                     <Icon size={18} />
-                    <span className="text-sm font-medium">{item.label}</span>
+                    <span className="mobile-text text-sm font-medium">{item.label}</span>
                   </button>
                 );
               })}
