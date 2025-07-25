@@ -51,7 +51,7 @@ const MobileProfileCard = ({ profile, currentColor }) => {
                 className="w-12 h-12 flex items-center justify-center border border-gray-600 rounded-full hover:border-gray-400 transition-all duration-200"
                 title={social.name}
               >
-                <Icon size={16} className="text-gray-400 hover:text-white" />
+                <Icon size={20} className="text-gray-400 hover:text-white" />
               </a>
             );
           })}
