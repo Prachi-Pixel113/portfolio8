@@ -10,7 +10,7 @@ const MobileProfileCard = ({ profile, currentColor }) => {
   ];
 
   return (
-    <div className="md:hidden bg-gray-900/50 backdrop-blur-sm border-b border-gray-700 py-6 px-4 mt-16">
+    <div className="mobile-profile-card md:hidden bg-gray-900/50 backdrop-blur-sm border-b border-gray-700 py-6 px-4 mt-16">
       <div className="text-center">
         {/* Profile Picture */}
         <div className="mb-4">
@@ -23,15 +23,15 @@ const MobileProfileCard = ({ profile, currentColor }) => {
           </div>
           
           {/* Name and Title */}
-          <h1 className="text-xl font-bold text-white mb-1">{profile.name}</h1>
-          <p className="text-gray-400 text-sm">{profile.title}</p>
+          <h1 className="mobile-title text-xl font-bold text-white mb-1">{profile.name}</h1>
+          <p className="mobile-text text-gray-400 text-sm">{profile.title}</p>
         </div>
         
         {/* Contact Info */}
         <div className="mb-4">
           <a 
             href={`mailto:${profile.email}`}
-            className="text-white text-sm hover:text-gray-300 transition-colors"
+            className="mobile-text text-white text-sm hover:text-gray-300 transition-colors"
           >
             {profile.email}
           </a>
@@ -39,7 +39,7 @@ const MobileProfileCard = ({ profile, currentColor }) => {
         </div>
         
         {/* Social Links */}
-        <div className="flex justify-center space-x-3 mb-4">
+        <div className="mobile-social-links flex justify-center space-x-3 mb-4">
           {socialLinks.map((social) => {
             const Icon = social.icon;
             return (
@@ -61,7 +61,7 @@ const MobileProfileCard = ({ profile, currentColor }) => {
         <div className="text-center">
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center px-6 py-2 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg text-sm"
+            className="mobile-button inline-flex items-center px-6 py-2 text-black font-semibold rounded-full transition-all duration-200 hover:shadow-lg text-sm"
             style={{ backgroundColor: currentColor }}
           >
             <Mail size={16} className="mr-2" />
