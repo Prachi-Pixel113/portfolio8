@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { GraduationCap, Briefcase, Calendar, MapPin, Award, Star } from 'lucide-react';
 
 const ResumeSection = ({ resume, currentColor }) => {
   const [activeTab, setActiveTab] = useState('experience');
+  const [visibleItems, setVisibleItems] = useState(new Set());
+  const itemRefs = useRef([]);
 
   // Add CSS animations
-  React.useEffect(() => {
+  useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
       @keyframes lineGrow {
         0% {
           height: 0;
-          transform: translateY(-100%);
+          transform: scaleY(0);
+          transform-origin: top;
         }
         100% {
           height: 100%;
-          transform: translateY(0);
+          transform: scaleY(1);
+          transform-origin: top;
         }
       }
       
@@ -29,13 +33,87 @@ const ResumeSection = ({ resume, currentColor }) => {
           transform: translateY(0);
         }
       }
+
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 0 10px ${currentColor}40;
+        }
+        50% {
+          box-shadow: 0 0 20px ${currentColor}80, 0 0 30px ${currentColor}40;
+        }
+      }
+
+      .timeline-line {
+        height: 0;
+        transition: height 0.8s ease-out;
+      }
+
+      .timeline-line.animate {
+        animation: lineGrow 1.2s ease-out forwards;
+      }
+
+      .timeline-dot {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+      }
+
+      .timeline-dot.animate {
+        opacity: 1;
+        transform: translateY(0);
+        animation: pulseGlow 2s ease-in-out infinite;
+      }
+
+      .timeline-content {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .timeline-content.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
     `;
     document.head.appendChild(style);
     
     return () => {
       document.head.removeChild(style);
     };
-  }, []);
+  }, [currentColor]);
+
+  // Intersection Observer for scroll-triggered animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = parseInt(entry.target.dataset.index);
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            setVisibleItems(prev => new Set([...prev, index]));
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '-50px 0px'
+      }
+    );
+
+    itemRefs.current.forEach((ref, index) => {
+      if (ref) {
+        ref.dataset.index = index;
+        observer.observe(ref);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [activeTab]);
+
+  // Reset animations when tab changes
+  useEffect(() => {
+    setVisibleItems(new Set());
+    itemRefs.current = [];
+  }, [activeTab]);
 
   const TimelineItem = ({ item, isLast, index }) => (
     <div className="relative flex items-start space-x-6 pb-8">
