@@ -10,7 +10,7 @@ const MobileProfileCard = ({ profile, currentColor }) => {
   ];
 
   return (
-    <div className="mobile-profile-card md:hidden bg-gray-900/50 backdrop-blur-sm border-b border-gray-700 py-10 px-4 mt-16">
+    <div className="mobile-profile-card md:hidden bg-gray-900/50 backdrop-blur-sm border-b border-gray-700 py-16 px-4 mt-16">
       <div className="text-center">
         {/* Profile Picture */}
         <div className="mb-6">
