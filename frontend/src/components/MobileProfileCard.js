@@ -39,7 +39,7 @@ const MobileProfileCard = ({ profile, currentColor }) => {
         </div>
         
         {/* Social Links */}
-        <div className="mobile-social-links flex justify-center space-x-4 mb-6">
+        <div className="mobile-social-links flex justify-center space-x-6 mb-8">
           {socialLinks.map((social) => {
             const Icon = social.icon;
             return (
