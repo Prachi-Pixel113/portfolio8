@@ -239,7 +239,9 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Align resume section with skills section layout"
+    - "Add line animation for experience block icons with scroll trigger"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
