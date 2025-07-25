@@ -261,7 +261,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Fix mobile responsive visibility of education and experience content"
+    - "Increase profile card height in mobile responsive view"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
