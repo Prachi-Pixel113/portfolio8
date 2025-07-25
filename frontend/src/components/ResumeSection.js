@@ -161,9 +161,9 @@ const ResumeSection = ({ resume, currentColor }) => {
           ></div>
         </div>
 
-        {/* Content with slide-in animation - Always visible on mobile */}
+        {/* Content with slide-in animation - Always visible */}
         <div 
-          className={`flex-1 bg-black p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-700 ${isVisible ? 'timeline-content animate' : 'opacity-100 md:opacity-0 md:timeline-content'}`}
+          className={`flex-1 bg-black p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-gray-700 timeline-content ${isVisible ? 'animate' : ''}`}
           style={{
             animationDelay: `${index * 0.15}s`
           }}
