@@ -205,7 +205,17 @@ frontend:
         agent: "main"
         comment: "Added settings functionality to mobile profile card: 1) Imported Settings icon from lucide-react, 2) Added onSettingsClick prop to MobileProfileCard component, 3) Added Settings button below Hire Me button with consistent styling (gray background, border, hover effects), 4) Updated Portfolio.js to pass setShowSettings handler to MobileProfileCard. Settings button now accessible on mobile devices to match desktop functionality."
 
-  - task: "Fix timeline animation for mobile devices in education/experience section"
+  - task: "Fix education and experience cards visibility on desktop"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ResumeSection.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Fixed desktop visibility issues in education/experience section: 1) Removed problematic opacity classes that were hiding cards on desktop (md:opacity-0), 2) Ensured timeline content is always visible with opacity: 1 by default, 3) Improved desktop spacing (space-y-12 on md+, pb-12 on md+), 4) Enhanced timeline dots size on desktop (w-14 h-14 vs w-12 h-12), 5) Increased content padding on desktop (p-8 vs p-6), 6) Improved timeline dot positioning (space-x-8 on md+). Cards now properly visible on both desktop and mobile with proper animations."
     implemented: true
     working: "NA"
     file: "/app/frontend/src/components/ResumeSection.js"
