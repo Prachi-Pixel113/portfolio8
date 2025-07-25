@@ -118,6 +118,18 @@ backend:
         comment: "This task is frontend only, no backend changes required"
 
 frontend:
+  - task: "Fix mobile responsive visibility of education and experience content"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ResumeSection.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Fixed mobile visibility issues: Changed padding from px-8 to px-0 for mobile, simplified timeline layout, made timeline items mobile-friendly with smaller icons and spacing (space-x-4 on mobile, md:space-x-6), ensured content is visible by default on mobile (opacity: 1) with animations only on desktop (min-width: 768px), improved responsive text sizes and layout structure."
+
   - task: "Align resume section with skills section layout"
     implemented: true
     working: true
