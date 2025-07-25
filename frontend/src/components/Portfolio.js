@@ -131,69 +131,28 @@ const Portfolio = () => {
         onSettingsChange={setSettings}
       />
 
-      {/* Mobile Header - Visible only on mobile */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-30 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 p-4">
-        <div className="flex items-center justify-between">
-          <button
-            onClick={() => setShowMobileProfile(true)}
-            className="flex items-center space-x-3 flex-1"
-          >
-            <div className="w-10 h-10 rounded-full overflow-hidden">
-              <img 
-                src={mockData.profile.image} 
-                alt={mockData.profile.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="text-left">
-              <h1 className="text-white font-bold text-lg">{mockData.profile.name}</h1>
-              <p className="text-gray-400 text-sm">{mockData.profile.title}</p>
-            </div>
-          </button>
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={() => setShowMobileProfile(true)}
-              className="w-8 h-8 flex items-center justify-center bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-white transition-colors"
-            >
-              <Menu size={16} />
-            </button>
-            <button
-              onClick={() => setShowSettings(true)}
-              className="w-8 h-8 flex items-center justify-center bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-white transition-colors"
-            >
-              <Settings size={16} />
-            </button>
-          </div>
-        </div>
-      </div>
+      {/* Mobile Navigation */}
+      <MobileNavbar
+        activeSection={activeSection}
+        onSectionClick={handleSectionClick}
+        currentColor={getCurrentColor()}
+      />
 
-      {/* Mobile Profile Drawer */}
-      {showMobileProfile && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" onClick={() => setShowMobileProfile(false)}>
-          <div className="fixed left-0 top-0 bottom-0 w-80 bg-gray-900 border-r border-gray-700 transform transition-transform duration-300 overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            {/* Close Button */}
-            <button
-              onClick={() => setShowMobileProfile(false)}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-white transition-colors z-10"
-            >
-              <X size={16} />
-            </button>
-            
-            {/* Profile Card Content in Mobile Drawer */}
-            <div className="p-6 pt-16">
-              <ProfileCard 
-                profile={mockData.profile}
-                currentColor={getCurrentColor()}
-                onSettingsClick={() => {
-                  setShowMobileProfile(false);
-                  setShowSettings(true);
-                }}
-                isMobile={true}
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Mobile Profile Card */}
+      <MobileProfileCard 
+        profile={mockData.profile}
+        currentColor={getCurrentColor()}
+      />
+
+      {/* Desktop Settings Button */}
+      <div className="hidden md:block fixed top-4 right-4 z-30">
+        <button
+          onClick={() => setShowSettings(true)}
+          className="w-10 h-10 flex items-center justify-center bg-gray-800 border border-gray-700 rounded-full text-gray-400 hover:text-white transition-colors"
+        >
+          <Settings size={16} />
+        </button>
+      </div>
 
       {/* Profile Card */}
       <ProfileCard 
