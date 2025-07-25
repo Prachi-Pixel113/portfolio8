@@ -58,17 +58,10 @@ const ResumeSection = ({ resume, currentColor }) => {
         transition: all 0.6s ease-out;
       }
 
-      @media (min-width: 768px) {
-        .timeline-dot {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        
-        .timeline-dot.animate {
-          opacity: 1;
-          transform: translateY(0);
-          animation: pulseGlow 2s ease-in-out infinite;
-        }
+      .timeline-dot.animate {
+        opacity: 1;
+        transform: translateY(0);
+        animation: pulseGlow 2s ease-in-out infinite;
       }
 
       .timeline-content {
@@ -77,16 +70,9 @@ const ResumeSection = ({ resume, currentColor }) => {
         transition: all 0.8s ease-out;
       }
 
-      @media (min-width: 768px) {
-        .timeline-content {
-          opacity: 0;
-          transform: translateX(30px);
-        }
-        
-        .timeline-content.animate {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      .timeline-content.animate {
+        opacity: 1;
+        transform: translateX(0);
       }
     `;
     document.head.appendChild(style);
