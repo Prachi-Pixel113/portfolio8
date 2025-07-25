@@ -24,8 +24,8 @@ const ContactSection = ({ contact, currentColor }) => {
   };
 
   return (
-    <div className="min-h-screen py-12 px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen py-12 px-0 lg:px-16">
+      <div className="max-w-6xl mx-auto px-4">
         
         {/* Section Header */}
         <div className="text-left mb-12">
