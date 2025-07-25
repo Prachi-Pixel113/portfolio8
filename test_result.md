@@ -118,6 +118,30 @@ backend:
         comment: "This task is frontend only, no backend changes required"
 
 frontend:
+  - task: "Align resume section with skills section layout"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ResumeSection.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Changed resume section header from center-aligned to left-aligned like skills section. Updated padding from py-12 to py-8, removed flex items-center justify-center, changed max-width from max-w-5xl to max-w-6xl to match skills section layout and alignment."
+
+  - task: "Add line animation for experience block icons with scroll trigger"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ResumeSection.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Enhanced timeline animations with scroll-triggered effects using Intersection Observer. Added gradient connecting lines that animate from top to bottom when scrolling, pulsing glow effects for timeline dots, slide-in animations for content cards, and staggered animation delays. Lines grow progressively as user scrolls down through experience items."
+
   - task: "Increase profile card height in mobile responsive view"
     implemented: true
     working: true
