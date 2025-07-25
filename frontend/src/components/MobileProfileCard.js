@@ -23,8 +23,8 @@ const MobileProfileCard = ({ profile, currentColor }) => {
           </div>
           
           {/* Name and Title */}
-          <h1 className="mobile-title text-2xl font-bold text-white mb-2">{profile.name}</h1>
-          <p className="mobile-text text-gray-400 text-base">{profile.title}</p>
+          <h1 className="mobile-title text-3xl font-bold text-white mb-3">{profile.name}</h1>
+          <p className="mobile-text text-gray-400 text-lg">{profile.title}</p>
         </div>
         
         {/* Contact Info */}
