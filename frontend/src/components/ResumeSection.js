@@ -65,14 +65,21 @@ const ResumeSection = ({ resume, currentColor }) => {
       }
 
       .timeline-content {
-        opacity: 0;
-        transform: translateX(30px);
+        opacity: 1;
+        transform: translateX(0);
         transition: all 0.8s ease-out;
       }
 
-      .timeline-content.animate {
-        opacity: 1;
-        transform: translateX(0);
+      @media (min-width: 768px) {
+        .timeline-content {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        
+        .timeline-content.animate {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
     `;
     document.head.appendChild(style);
