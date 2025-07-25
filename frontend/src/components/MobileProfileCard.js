@@ -48,10 +48,10 @@ const MobileProfileCard = ({ profile, currentColor }) => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-gray-400 transition-all duration-200"
+                className="w-10 h-10 flex items-center justify-center border border-gray-600 rounded-full hover:border-gray-400 transition-all duration-200"
                 title={social.name}
               >
-                <Icon size={14} className="text-gray-400 hover:text-white" />
+                <Icon size={16} className="text-gray-400 hover:text-white" />
               </a>
             );
           })}
