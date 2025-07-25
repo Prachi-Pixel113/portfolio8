@@ -212,41 +212,6 @@ const ResumeSection = ({ resume, currentColor }) => {
       </div>
     );
   };
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-          <div>
-            <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-            <div className="flex items-center text-gray-300 mb-2">
-              <MapPin size={16} className="mr-1" />
-              <span className="font-medium">{item.company || item.institution}</span>
-            </div>
-          </div>
-          <div className="flex items-center text-gray-400 text-sm bg-gray-700 px-3 py-1 rounded-full">
-            <Calendar size={14} className="mr-1" />
-            {item.period}
-          </div>
-        </div>
-        
-        <p className="text-gray-400 leading-relaxed mb-4">{item.description}</p>
-        
-        {item.achievements && (
-          <div className="space-y-3">
-            <div className="flex items-center">
-              <Star size={16} className="mr-2" style={{ color: currentColor }} />
-              <h4 className="text-sm font-semibold text-white">Key Achievements</h4>
-            </div>
-            <div className="grid grid-cols-1 gap-2">
-              {item.achievements.map((achievement, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: currentColor }}></div>
-                  <span className="text-sm text-gray-300">{achievement}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
 
   return (
     <div className="min-h-screen py-8 px-8 lg:px-16">
