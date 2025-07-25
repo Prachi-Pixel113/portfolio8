@@ -211,7 +211,7 @@ frontend:
         agent: "main"
         comment: "Added settings functionality to mobile profile card: 1) Imported Settings icon from lucide-react, 2) Added onSettingsClick prop to MobileProfileCard component, 3) Added Settings button below Hire Me button with consistent styling (gray background, border, hover effects), 4) Updated Portfolio.js to pass setShowSettings handler to MobileProfileCard. Settings button now accessible on mobile devices to match desktop functionality."
 
-  - task: "Redesign contact section layout and optimize form dimensions"
+  - task: "Create minimalist contact section with form-only design"
     implemented: true
     working: "NA"
     file: "/app/frontend/src/components/ContactSection.js"
@@ -225,6 +225,9 @@ frontend:
       - working: "NA"
         agent: "main"
         comment: "OPTIMIZED FORM DIMENSIONS: Further improved contact form layout: 1) INCREASED WIDTH: Changed grid to lg:grid-cols-4 with form taking lg:col-span-3 (75% width vs previous 66%), maximizing form space on desktop, 2) DECREASED HEIGHT: Reduced all form elements - smaller title (text-2xl vs text-3xl), compact input fields (py-3 vs py-6), reduced textarea (5 rows vs 10), smaller button (py-3 vs py-6), tighter spacing (space-y-4 vs space-y-8), less padding (p-8 vs p-10), smaller text sizes (text-sm vs text-base), 3) STREAMLINED CONTACT INFO: Smaller icons (w-10 h-10 vs w-12 h-12), compact spacing, smaller text. Form now has optimal width-to-height ratio for better desktop user experience."
+      - working: "NA"
+        agent: "main"
+        comment: "MINIMALIST FORM-ONLY DESIGN: Completely removed contact information panel (Email, Phone, Location) as requested, creating ultra-clean contact section with only the contact form. Changes: 1) FULL-WIDTH FORM: Removed grid layout entirely, contact form now takes full container width with max-w-4xl constraint for optimal readability, 2) CLEANED IMPORTS: Removed unused Phone and MapPin icons, keeping only Mail, Send, and MessageCircle, 3) CENTERED LAYOUT: Form is centered with mx-auto for perfect alignment. Contact section now features minimalist design with maximum focus on the contact form itself."
     implemented: true
     working: "NA"
     file: "/app/frontend/src/components/ResumeSection.js"
