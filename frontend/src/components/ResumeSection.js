@@ -176,21 +176,21 @@ const ResumeSection = ({ resume, currentColor }) => {
             e.currentTarget.style.boxShadow = '';
           }}
         >
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-            <div>
-              <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+          <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:items-start md:justify-between mb-4">
+            <div className="flex-1">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2">{item.title}</h3>
               <div className="flex items-center text-gray-300 mb-2">
-                <MapPin size={16} className="mr-1" />
-                <span className="font-medium">{item.company || item.institution}</span>
+                <MapPin size={14} className="mr-1 md:w-4 md:h-4" />
+                <span className="font-medium text-sm md:text-base">{item.company || item.institution}</span>
               </div>
             </div>
-            <div className="flex items-center text-gray-400 text-sm bg-gray-700 px-3 py-1 rounded-full">
-              <Calendar size={14} className="mr-1" />
+            <div className="flex items-center text-gray-400 text-xs md:text-sm bg-gray-700 px-3 py-1 rounded-full self-start">
+              <Calendar size={12} className="mr-1 md:w-3.5 md:h-3.5" />
               {item.period}
             </div>
           </div>
           
-          <p className="text-gray-400 leading-relaxed mb-4">{item.description}</p>
+          <p className="text-gray-400 leading-relaxed mb-4 text-sm md:text-base">{item.description}</p>
           
           {item.achievements && (
             <div className="space-y-3">
