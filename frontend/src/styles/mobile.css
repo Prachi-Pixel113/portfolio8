@@ -1,0 +1,88 @@
+/* Mobile-specific styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile navigation and layout optimizations */
+@media screen and (max-width: 768px) {
+  .mobile-optimized {
+    padding: 0.75rem;
+    margin: 0.5rem;
+  }
+  
+  .mobile-section {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .mobile-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .mobile-profile-card {
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(55, 65, 81, 1);
+    padding: 1rem;
+    margin-top: 4rem;
+  }
+  
+  .mobile-nav-dropdown {
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(55, 65, 81, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-content {
+    padding-top: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-section-spacing {
+    margin-bottom: 2rem;
+  }
+  
+  .mobile-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablet optimizations */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .tablet-spacing {
+    padding: 1rem;
+  }
+  
+  .tablet-content {
+    padding-top: 4rem;
+  }
+}
+
+/* Enhanced mobile responsiveness */
+@media screen and (max-width: 480px) {
+  .mobile-profile-card {
+    padding: 0.75rem;
+  }
+  
+  .mobile-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .mobile-social-links {
+    gap: 0.5rem;
+  }
+  
+  .mobile-nav-item {
+    padding: 0.75rem;
+  }
+}
