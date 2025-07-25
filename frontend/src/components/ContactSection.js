@@ -46,17 +46,9 @@ const ContactSection = ({ contact, currentColor }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-              <p className="text-gray-400 mb-8">
-                I'm always open to discussing new opportunities and interesting projects. 
-                Feel free to reach out through any of the channels below.
-              </p>
-            </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Contact Information - Reduced width */}
+          <div className="lg:col-span-1 space-y-8">
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: currentColor }}>
@@ -88,33 +80,10 @@ const ContactSection = ({ contact, currentColor }) => {
                 </div>
               </div>
             </div>
-
-            {/* Social Links */}
-            <div>
-              <h4 className="text-white font-semibold mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                {contact.social.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center transition-colors duration-200 border border-gray-800"
-                    style={{
-                      ':hover': { backgroundColor: currentColor }
-                    }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = currentColor}
-                    onMouseLeave={(e) => e.target.style.backgroundColor = '#111827'}
-                  >
-                    <span className="text-xl">{social.icon}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-gray-900 p-6 md:p-8 rounded-xl shadow-lg border border-gray-800">
+          {/* Contact Form - Increased width */}
+          <div className="lg:col-span-2 bg-gray-900 p-6 md:p-10 rounded-xl shadow-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
               <MessageCircle size={28} className="mr-3" style={{ color: currentColor }} />
               Send Message
