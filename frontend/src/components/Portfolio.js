@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Settings, Menu, X } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import ProfileCard from './ProfileCard';
+import MobileNavbar from './MobileNavbar';
+import MobileProfileCard from './MobileProfileCard';
 import RightNavbar from './RightNavbar';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
